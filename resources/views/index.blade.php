@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
   <!-- Meta Tags -->
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -12,15 +14,14 @@
   <title>puzzle</title>
   <!-- Favicon Icon -->
    <link rel="icon"   href="{{ asset('/img/favicon.png') }}">
-
- 
-  <script src="{{ asset('/js/main.js') }}"></script>
-  <script src="{{ asset('/js/wow.min.js') }}"></script>
-  <script src="{{ asset('/js/tamjid-counter.min.js') }}"></script>
-  <script src="{{ asset('/js/owlCarousel.min.js') }}"></script>
-  <script src="{{ asset('/js/mailchimp.min.js') }}"></script>
-  <script src="{{ asset('/js/vendor/jquery-1.12.4.min.js') }}"></script>
-  <script src="{{ asset('/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+  
+   <script type="text/javascript" src="{{ asset('/js/main.js') }}"></script>
+   <script type="text/javascript" src="{{ asset('/js/wow.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('/js/tamjid-counter.min.js') }}"></script>
+  <script type="text/javascript"  src="{{ asset('/js/owlCarousel.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('/js/mailchimp.min.js') }}"></script>
+  <script  type="text/javascript" src="{{ asset('/js/vendor/jquery-1.12.4.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('/js/vendor/modernizr-3.5.0.min.js') }}"></script>
 
   <!-- Stylesheets -->
     
@@ -54,10 +55,26 @@
           <div class="st-site-branding">
             <a href="#" class="st-logo-link">
               
-             <link rel="icon"  alt="demo" href="{{ asset('/img/light-img/logo.png') }}">
+            <img src="{{ asset('/img/light-img/logo.png') }}"alt="demo">
+
+
+            
 
           </a>
           </div>
+          @if (Route::has('login'))
+                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    @auth
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
           <!-- For Site Title -->
           <!-- <span class="st-site-title">
             <a href="index.html">Logo</a>
@@ -75,6 +92,9 @@
               <ul class="st-nav-list onepage-nav">
                 <li class="st-has-children"><a href="#home" class="smooth-scroll">Home</a>
                   <ul>
+
+
+                  
                     <li><a href="index.html">Minimal Landing</a></li>
                     <li><a href="home2.html">Animated Home</a></li>
                     <li><a href="home7.html">Dark Home</a></li>
@@ -90,6 +110,9 @@
                 <li><a href="#team" class="smooth-scroll">Team</a></li>
                 <li><a href="#price" class="smooth-scroll">Price</a></li>
                 <li class="st-has-children"><a href="#blog" class="smooth-scroll">Blog</a>
+
+            
+
                   <ul>
                     <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
                     <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
@@ -125,10 +148,8 @@
           </div>
         </div>
         <div class="st-hero-img">
-
-        <link rel="icon"  alt="demo" href="{{ asset('/img/light-img/hero-img.png') }}">
-
-       </div>
+        <img src="{{ asset('/img/light-img/hero-img.png') }}"alt="demo"></div>
+      </div>
       <div class="st-hero-slide st-style1 st-flex">
         <div class="container">
           <div class="st-hero-text st-style1">
@@ -143,9 +164,9 @@
             </div>
           </div>
         </div>
-        <div class="st-hero-img">
-        <link rel="icon"  alt="demo" href="{{ asset('/img/light-img/hero-img1.png') }}">
-       </div>
+        
+        <div class="st-hero-img"><img src="{{ asset('/img/light-img/hero-img1.png') }}" alt="demo"></div>
+      </div>
     </div>
     <!-- End Hero Slider -->
     <!-- Start Icon Box -->
@@ -200,7 +221,9 @@
           <div class="col-lg-6">
             <div class="st-vertical-middle">
               <div class="st-vertical-middle-in">
-                <div class="st-about-img wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.2s"><img src="assets/img/light-img/about-img1.png" alt="demo"></div>
+                <div class="st-about-img wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                  <img src="{{ asset('/img/light-img/about-img1.png') }}" alt="demo"></div>
+                  
               </div>
             </div>
           </div>
@@ -232,7 +255,8 @@
           <h2>Business Services</h2>
           <div class="st-seperator">
             <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-            <img src="assets/img/light-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
+            <img src="{{ asset('/img/light-img/seperator-icon.png') }}" alt="demo" class="st-seperator-icon">
+            
             <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
           </div>
           <p>Business services are activities that combine or consolidate certain <br>enterprise-wide needed support services</p>
@@ -242,21 +266,25 @@
         <div class="container">
           <div class="st-service-carousel owl-carousel st-style2 st-owl-controler3">
             <div class="st-image-box st-style1 text-center wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s">
-              <a href="#" class="st-image"><img src="assets/img/light-img/service1.png" alt="demo"></a>
+              <a href="#" class="st-image"><img src="{{ asset('/img/light-img/service1.png') }}" alt="demo"></a>
+              
+
               <div class="st-image-box-info">
                 <h3 class="st-image-box-title"><a href="#">Business Meeting</a></h3>
                 <div class="st-image-box-text">A meeting is when two or more people come together to discuss one or more topics often in a formal or business</div>
               </div>
             </div>
             <div class="st-image-box st-style1 text-center wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s">
-              <a href="#" class="st-image"><img src="assets/img/light-img/service2.png" alt="demo"></a>
+              <a href="#" class="st-image"><img src="{{ asset('/img/light-img/service2.png') }}" alt="demo"></a>
+              
               <div class="st-image-box-info">
                 <h3 class="st-image-box-title"><a href="#">Business Analysis</a></h3>
                 <div class="st-image-box-text">Business analysis is a research discipline of identifying business needs and determining solutions to business.</div>
               </div>
             </div>
             <div class="st-image-box st-style1 text-center wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s">
-              <a href="#" class="st-image"><img src="assets/img/light-img/service3.png" alt="demo"></a>
+              <a href="#" class="st-image"><img src="{{ asset('/img/light-img/service3.png') }}" alt="demo"></a>
+              
               <div class="st-image-box-info">
                 <h3 class="st-image-box-title"><a href="#">Business Grow</a></h3>
                 <div class="st-image-box-text">Market penetration is the key for a business growth. Business development processes to develop and implement growth.</div>
@@ -317,104 +345,136 @@
           <h2>Our Latest Project</h2>
           <div class="st-seperator">
             <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-            <img src="assets/img/light-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
+            <img src="{{ asset('/img/light-img/seperator-icon.png') }}" alt="demo" class="st-seperator-icon">
+            
             <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
           </div>
           <p>This is a great place to tell people more about your services and peak <br>their interest. Last year our latest work album</p>
         </div>
       </div>
       <div class="st-project st-project-carousel owl-carousel st-style1 st-owl-controler1">
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" data-src="assets/img/light-img/project1.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" 
+        data-src="{{ asset('assets/img/light-img/project1.jpg') }}">
+        
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s" data-src="assets/img/light-img/project2.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s"
+         data-src="{{ asset('/img/light-img/project2.jpg') }}">
+         
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" data-src="assets/img/light-img/project3.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" 
+        data-src="{{ asset('/img/light-img/project3.jpg') }}">
+        
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s" data-src="assets/img/light-img/project4.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s" 
+        data-src="{{ asset('/img/light-img/project4.jpg') }}">
+        
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" data-src="assets/img/light-img/project1.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s"
+         data-src="{{ asset('/img/light-img/project1.jpg') }}">
+         
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s" data-src="assets/img/light-img/project2.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s"
+         data-src=" {{ asset('/img/light-img/project2.jpg') }}">
+        
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" data-src="assets/img/light-img/project3.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s"
+         data-src="{{ asset('/img/light-img/project3.jpg') }}">
+         
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s" data-src="assets/img/light-img/project4.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s"
+         data-src="{{ asset('/img/light-img/project4.jpg') }}">
+           <div class="st-project-meta">
+            <h3>Project Title One</h3>
+            <span>Branding</span>
+          </div>
+        </a>
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s"
+         data-src="{{ asset('/img/light-img/project1.jpg') }}">
+         
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" data-src="assets/img/light-img/project1.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s"
+         data-src="{{ asset('/img/light-img/project2.jpg') }}">
+         
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s" data-src="assets/img/light-img/project2.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" 
+        data-src="{{ asset('/img/light-img/project3.jpg') }}">
+        
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" data-src="assets/img/light-img/project3.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s"
+         data-src="{{ asset('/img/light-img/project4.jpg') }}">
+         
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s" data-src="assets/img/light-img/project4.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" 
+        data-src="{{ asset('/img/light-img/project1.jpg') }}">
+        
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" data-src="assets/img/light-img/project1.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s" 
+        data-src="{{ asset('/img/light-img/project2.jpg') }}">
+        
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s" data-src="assets/img/light-img/project2.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" 
+        data-src="{{ asset('/img/light-img/project3.jpg') }}">
+        
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
           </div>
         </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" data-src="assets/img/light-img/project3.jpg">
-          <div class="st-project-meta">
-            <h3>Project Title One</h3>
-            <span>Branding</span>
-          </div>
-        </a>
-        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s" data-src="assets/img/light-img/project4.jpg">
+        <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s"
+         data-src="{{ asset('/img/light-img/project4.jpg') }}">
+         
           <div class="st-project-meta">
             <h3>Project Title One</h3>
             <span>Branding</span>
@@ -432,7 +492,9 @@
             <div class="st-vertical-middle">
               <div class="st-vertical-middle-in wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.2s">
                 <div class="st-skill-img text-center">
-                  <img src="assets/img/light-img/skill-img.png" alt="demo">
+
+                  <img src="{{ asset('/img/light-img/skill-img.png') }}" alt="demo">
+                  
                 </div>
               </div>
             </div>
@@ -502,7 +564,8 @@
           <h2>Creative Team</h2>
           <div class="st-seperator">
             <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-            <img src="assets/img/light-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
+            <img src="{{ asset('/img/light-img/seperator-icon.png') }}" alt="demo" class="st-seperator-icon">
+            
             <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
           </div>
           <p>Team members need to learn how to help one another. A team becomes more <br>than just a collection of people when a strong sense.</p>
@@ -513,7 +576,9 @@
           <div class="st-member-carousel owl-carousel st-style2 st-owl-controler3">
             <div class="st-team-member text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
               <div class="st-member-img">
-                <img src="assets/img/light-img/team1.png" alt="demo">
+
+                <img src="{{ asset('/img/light-img/team1.png') }}" alt="demo">
+                
               </div>
               <div class="st-member-info">
                 <h3 class="st-member-name">Rodney Artichoke</h3>
@@ -528,7 +593,9 @@
             </div>
             <div class="st-team-member text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.25s">
               <div class="st-member-img">
-                <img src="assets/img/light-img/team2.png" alt="demo">
+
+                <img src="{{ asset('/img/light-img/team2.png') }}" alt="demo">
+                
               </div>
               <div class="st-member-info">
                 <h3 class="st-member-name">Aston Dark</h3>
@@ -543,7 +610,9 @@
             </div>
             <div class="st-team-member text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
               <div class="st-member-img">
-                <img src="assets/img/light-img/team3.png" alt="demo">
+
+                <img src="{{ asset('/img/light-img/team3.png') }}" alt="demo">
+                
               </div>
               <div class="st-member-info">
                 <h3 class="st-member-name">Keir Preston</h3>
@@ -558,7 +627,10 @@
             </div>
             <div class="st-team-member text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.35s">
               <div class="st-member-img">
-                <img src="assets/img/light-img/team4.png" alt="demo">
+
+                <img src="{{ asset('/img/light-img/team4.png') }}" alt="demo">
+                
+                
               </div>
               <div class="st-member-info">
                 <h3 class="st-member-name">Criss Donald</h3>
@@ -594,7 +666,9 @@
             <div class="st-vertical-middle">
               <div class="st-vertical-middle-in st-flex">
                 <div class="st-cta-img wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
-                  <img src="assets/img/light-img/cta-img.png" alt="demo">
+                  <img src="{{ asset('/img/light-img/cta-img.png') }}" alt="demo">
+                  
+                  
                 </div>
               </div>
             </div>
@@ -621,7 +695,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="st-price-card text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-              <div class="st-price-card-img"><img src="assets/img/light-img/price-img1.png" alt="demo"></div>
+              <div class="st-price-card-img"><img src="{{ asset('/img/light-img/price-img1.png') }}" alt="demo"></div>
               <h3 class="st-price-card-title">Economy</h3>
               <div class="st-price">
                 <h3>$19</h3>
@@ -640,7 +714,9 @@
           </div>
           <div class="col-lg-4">
             <div class="st-price-card text-center st-featured-price wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-              <div class="st-price-card-img"><img src="assets/img/light-img/price-img2.png" alt="demo"></div>
+              <div class="st-price-card-img"><img src="{{ asset('/img/light-img/price-img2.png') }}" alt="demo"></div>
+              
+
               <h3 class="st-price-card-title">Deluxe</h3>
               <div class="st-price">
                 <h3>$29</h3>
@@ -659,7 +735,8 @@
           </div>
           <div class="col-lg-4">
             <div class="st-price-card text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-              <div class="st-price-card-img"><img src="assets/img/light-img/price-img3.png" alt="demo"></div>
+              <div class="st-price-card-img"><img src="{{ asset('/img/light-img/price-img3.png') }}" alt="demo"></div>
+              
               <h3 class="st-price-card-title">Ultimate</h3>
               <div class="st-price">
                 <h3>$49</h3>
@@ -688,7 +765,7 @@
           <h2>Latest News</h2>
           <div class="st-seperator">
             <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-            <img src="assets/img/light-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
+            <img src="{{ asset('/img/light-img/seperator-icon.png') }}" alt="demo" class="st-seperator-icon">
             <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
           </div>
           <p>News websites and blogs are common sources for web feeds, but feeds are <br>also used to deliver structured</p>
@@ -699,7 +776,8 @@
           <div class="col-lg-4">
             <div class="st-blog st-style1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
               <div class="st-zoom">
-                <a href="#" class="st-blog-thumb st-bg st-zoom-in" data-src="assets/img/light-img/blog1.png"></a>
+                <a href="#" class="st-blog-thumb st-bg st-zoom-in" data-src="{{ asset('/img/light-img/blog1.png') }}"></a>
+                
               </div>
               <div class="st-blog-info">
                 <div class="st-blog-label">By <a href="#">Limty</a></div>
@@ -715,7 +793,8 @@
           <div class="col-lg-4">
             <div class="st-blog st-style1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
               <div class="st-zoom">
-                <a href="#" class="st-blog-thumb st-bg st-zoom-in" data-src="assets/img/light-img/blog2.png"></a>
+                <a href="#" class="st-blog-thumb st-bg st-zoom-in" data-src="{{ asset('/img/light-img/blog2.png') }}"></a>
+                
               </div>
               <div class="st-blog-info">
                 <div class="st-blog-label">By <a href="#">Limty</a></div>
@@ -728,10 +807,12 @@
               </div>
             </div>
           </div>
+          
           <div class="col-lg-4">
             <div class="st-blog st-style1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
               <div class="st-zoom">
-                <a href="#" class="st-blog-thumb st-bg st-zoom-in" data-src="assets/img/light-img/blog3.png"></a>
+                <a href="#" class="st-blog-thumb st-bg st-zoom-in" data-src="{{ asset('/img/light-img/blog3.png') }}"></a>
+                
               </div>
               <div class="st-blog-info">
                 <div class="st-blog-label">By <a href="#">Limty</a></div>
@@ -768,8 +849,13 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
+
             <div class="st-testimonial-right-img st-flex wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.2s">
-              <img src="assets/img/light-img/testimonial-img.png" alt="demo">
+
+              <img src="{{ asset('/img/light-img/testimonial-img.png') }}" alt="demo">
+
+              
+            
             </div>
           </div>
           <div class="col-lg-6">
@@ -830,7 +916,8 @@
               </div>
               <div class="st-right-newsletter">
                 <div class="st-newsletter-img wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                  <img src="assets/img/light-img/news-letter-img.png" alt="demo">
+                  <img src="{{ asset('/img/light-img/news-letter-img.png') }}" alt="demo">
+                  
                   <div class="st-bard-animation">
                     <div class="st-bard-animation1"><img src="assets/img/light-img/bard1.png" alt="demo"></div>
                     <div class="st-bard-animation2"><img src="assets/img/light-img/bard2.png" alt="demo"></div>
@@ -914,7 +1001,7 @@
     <div class="st-map-wrap">
       <div class="st-map-bar st-flex">
         <div class="st-map-bar-img">
-          <img src="assets/img/light-img/map-icon-img.png" alt="demo">
+          <img src="{{ asset('/img/light-img/map-icon-img.png') }}" alt="demo">
           <div class="st-map-bar-icon"><i class="fas fa-map-marker-alt"></i></div>
         </div>
       </div>
@@ -932,7 +1019,8 @@
     <div class="st-main-footer text-center">
       <div class="container">
         <div class="st-footer-logo">
-          <img src="assets/img/light-img/footer-logo.png" alt="demo">
+        
+          <img src="{{ asset('/img/light-img/footer-logo.png') }}" alt="demo">
         </div>
         <div class="st-footer-text">We understand that it is better to morph virally than to embrace intuitively.<br>
           We will matrix the power of schemas to redefine.</div>
