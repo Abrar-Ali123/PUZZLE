@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('setting_translations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('setting_id')->unsigned();
+            $table->id();
+            $table->unsignedBigInteger('setting_id');
             $table->string('locale')->index();
             $table->string('title');
             $table->text('content');
