@@ -82,6 +82,11 @@ return [
 
     'locale' => 'en',
 
+    'languages' =>[
+          'ar' => 'العربية',
+          'en' => 'English'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -93,7 +98,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ar',
 
     /*
     |--------------------------------------------------------------------------
@@ -190,6 +195,7 @@ return [
 
     'aliases' => [
 
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

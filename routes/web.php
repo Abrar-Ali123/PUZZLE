@@ -1,6 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+  use App\Http\Controllers\Dashboard\SettingController;
+use App\Http\Controllers\Dashboard\UserController;
+  use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,20 +16,54 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/1', function () {
     return view('index');
 });
 
-Route::get('/1', function () {
-    return view('welcome');
+// website 
+
+
+// Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/categories/{category}', [WebsiteCategoryController::class, 'show'])->name('category');
+Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
+
+
+
+
+
+
+
+
+
+
+
+
+// Dashboard
+
+
+Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'checkLogin']], function () {
+    
+
+    Route::get('/', function () {
+        return view('dashboard.layouts.layout');
+    })->name('index');
+
+
+    Route::get('/settings', [SettingController::class, 'index'])->name('settings');
+
+    Route::post('/settings/update/{setting}', [SettingController::class, 'update'])->name('settings.update');
+
+
+    Route::get('/users/all', [UserController::class, 'getUsersDatatable'])->name('users.all');
+    Route::post('/users/delete', [UserController::class, 'delete'])->name('users.delete');
+
+ 
+  
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ 
+ 
