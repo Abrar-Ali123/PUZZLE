@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Kernel;
+ namespace app\Http;
+
 
 use App\Http\Middleware\checkLogin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;

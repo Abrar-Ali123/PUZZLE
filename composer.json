@@ -33,13 +33,9 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/",
-            "Monolog\\": "src/",
-            "Vendor\\Namespace\\": ""
+            "Tests\\": "tests/"
         }
     },
-   
-
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
