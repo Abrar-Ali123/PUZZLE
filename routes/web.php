@@ -26,13 +26,13 @@ use Illuminate\Support\Facades\Route;
 
 
 // Dashboard
-/*
+
  
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'checkLogin']], function () {
 
   
 
-    Route::get('/one', function () {
+    Route::get('/dashboard', function () {
         return view('dashboard.layouts.layout');
     })->name('index');
 
