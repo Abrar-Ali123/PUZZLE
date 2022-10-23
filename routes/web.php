@@ -27,7 +27,6 @@ use Illuminate\Support\Facades\Route;
 
 
 // Dashboard
-Route::get('/test', [testController::class, 'test'])->name('gg');
 
  
 Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['auth', 'checkLogin']], function () {
