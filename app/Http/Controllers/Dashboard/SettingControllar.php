@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\VarDumper\VarDumper;
 use \Illuminate\Support\Str;
 
-class SettingControllar extends Controller
+class SettingController extends Controller
 {
 
-    public function index()
+    public function index(Setting $setting)
     {
         $setting = Setting::first();
         $this->authorize('view', $setting);

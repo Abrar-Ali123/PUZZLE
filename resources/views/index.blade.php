@@ -89,61 +89,61 @@
               <span></span>
             </div>
             <nav class="st-nav st-desktop-nav">
+
+             
               <ul class="st-nav-list onepage-nav">
-                <li class="st-has-children"><a href="#home" class="smooth-scroll">Home</a>
+                <li class="st-has-children"><a href="#home" class="smooth-scroll">{{ LaravelLocalization::getCurrentLocaleNative() }}
+                </a>
                   <ul>
-
-
-                  
-                    <li><a href="index.html">Minimal Landing</a></li>
-                    <li><a href="home2.html">Animated Home</a></li>
-                    <li><a href="home7.html">Dark Home</a></li>
-                    <li><a href="home4.html">Creative Landing</a></li>
-                    <li><a href="home3.html">Animated Home 2</a></li>
-                    <li><a href="home5.html">Creative Landing 2</a></li>
-                    <li><a href="home6.html">Minimal Landing 2</a></li>
+                  @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <li><a href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</a></li>
+                    @endforeach
                   </ul>
                 </li>
-                <li><a href="#about" class="smooth-scroll">About</a></li>
-                <li><a href="#service" class="smooth-scroll">Service</a></li>
-                <li><a href="#portfolio" class="smooth-scroll">Portfolio</a></li>
-                <li><a href="#team" class="smooth-scroll">Team</a></li>
-                <li><a href="#price" class="smooth-scroll">Price</a></li>
-                <li class="st-has-children"><a href="#blog" class="smooth-scroll">Blog</a>
-
-            
-
-                  <ul>
-                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                    <li><a href="blog-no-sidebar.html">Blog No Sidebar</a></li>
-                    <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
-                    <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
-                    <li><a href="blog-details-no-sidebar.html">Blog Details No Sidebar</a></li>
-                  </ul>
+                <li><a href="#Home" class="smooth-scroll">{{ __('index.Home') }}</a></li>
+                <li><a href="#about" class="smooth-scroll">{{ __('index.About') }}</a></li>
+                <li><a href="#service" class="smooth-scroll">{{ __('index.Service') }}</a></li>
+                <li><a href="#portfolio" class="smooth-scroll">{{ __('index.Portfolio') }}</a></li>
+                <li><a href="#team" class="smooth-scroll">{{ __('index.Team') }}</a></li>
+                <li><a href="#price" class="smooth-scroll">{{ __('index.Price') }}</a></li>
+                <li class="st-has-children"><a href="#blog" class="smooth-scroll">{{ __('index.Blog') }}</a>
                 </li>
-                <li><a href="#contact" class="smooth-scroll">Contact</a></li>
-              </ul>
-            </nav><!-- .st-nav -->
+               </ul>
+
+             
+           
+              </nav><!-- .st-nav -->
           </div><!-- .st-nav-wrap -->
         </div>
       </div>
     </div>
   </header>
+
+
+
+
+
   <div class="st-content">
     <!-- Start Hero Slider -->
     <div class="st-hero-slider1 owl-carousel st-owl-controler2" id="home">
       <div class="st-hero-slide st-style1 st-flex">
         <div class="container">
           <div class="st-hero-text st-style1">
-            <h1 class="st-hero-title">We provide outstanding <br />Creative Work!</h1>
+            <h1 class="st-hero-title">
+            {{ __('index.Puzzle complete') }}
+            <br />
+            {{ __('index.the missing part!') }}
+          </h1>
             <div class="st-hero-subtitle">
-              The process of business model construction and modification<br />
-              is also called business model innovation.
-            </div>
+            
+            {{ __('index.Marketing solutions') }}
+               <br />
+             </div>             
             <div class="st-btn-group st-style1">
-              <a href="#" class="st-btn st-style1 st-color1">Learn More</a>
-              <a href="https://www.youtube.com/embed/jRcfE2xxSAw?autoplay=1" class="st-btn st-style2 st-video-open"><i class="flaticon-multimedia"></i> Watch Video</a>
+              <a href="#" class="st-btn st-style1 st-color1">
+              {{ __('index.Get to know us more') }}
+              </a>
+              <a href="https://www.youtube.com/embed/jRcfE2xxSAw?autoplay=1" class="st-btn st-style2 st-video-open"><i class="flaticon-multimedia"></i>{{ __('index.Watch Video') }} </a>
             </div>
           </div>
         </div>
@@ -153,7 +153,9 @@
       <div class="st-hero-slide st-style1 st-flex">
         <div class="container">
           <div class="st-hero-text st-style1">
-            <h1 class="st-hero-title">We are Very Professional  <br /> To Our Work</h1>
+            <h1 class="st-hero-title">
+              
+            We are Very Professional  <br /> To Our Work</h1>
             <div class="st-hero-subtitle">
               The process of business model construction and modification<br />
               is also called business model innovation.

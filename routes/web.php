@@ -22,19 +22,22 @@ use Illuminate\Support\Facades\Route;
 
 // website 
 
-// Dashboard
 
+
+
+// Dashboard
+/*
  
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'checkLogin']], function () {
 
   
 
-    Route::get('/', function () {
+    Route::get('/one', function () {
         return view('dashboard.layouts.layout');
     })->name('index');
 
 
-    Route::get('/settings', [SettingController::class, 'index'])->name('settings');
+    Route::get('/settings', [SettingControllar.php::class, 'index'])->name('settings');
 
     Route::post('/settings/update/{setting}', [SettingController::class, 'update'])->name('settings.update');
 
@@ -50,3 +53,8 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['a
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+*/
+
+Route::get('/', function () {
+    return view('index');
+});
