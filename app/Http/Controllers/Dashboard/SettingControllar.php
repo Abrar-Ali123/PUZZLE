@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\VarDumper\VarDumper;
 use \Illuminate\Support\Str;
 
-class SettingController extends Controller
+class SettingControllar extends Controller
 {
 
     public function index()

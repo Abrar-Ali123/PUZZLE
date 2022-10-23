@@ -10,6 +10,7 @@ use phpDocumentor\Reflection\Types\Self_;
 
 class Setting extends Model implements TranslatableContract
 {
+    use HasFactory, Translatable;
     public $translatedAttributes = ['title', 'content', 'address'];
     protected $fillable = ['id', 'logo', 'favicon', 'facebook', 'instagram', 'phone', 'email', 'created_at', 'updated_at', 'deleted_at'];
 

@@ -1,9 +1,11 @@
 <?php
 
-  use App\Http\Controllers\Dashboard\SettingController;
+use app\Http\Controllers\Dashboard\SettingControllar;
 use App\Http\Controllers\Dashboard\UserController;
-  use Illuminate\Support\Facades\Route;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Illuminate\Support\Facades\Route;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,36 +19,15 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/1', function () {
-    return view('index');
-});
 
 // website 
 
-
-// Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('/categories/{category}', [WebsiteCategoryController::class, 'show'])->name('category');
-Route::get('/post/{post}', [PostController::class, 'show'])->name('post');
-
-
-
-
-
-
-
-
-
-
-
-
 // Dashboard
 
-
+ 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'checkLogin']], function () {
-    
+
+  
 
     Route::get('/', function () {
         return view('dashboard.layouts.layout');
@@ -61,9 +42,11 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['a
     Route::get('/users/all', [UserController::class, 'getUsersDatatable'])->name('users.all');
     Route::post('/users/delete', [UserController::class, 'delete'])->name('users.delete');
 
- 
-  
+    Route::resources([
+        'users' => UserController::class,
+     ]);
 });
 
- 
- 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
