@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\VarDumper\VarDumper;
 use \Illuminate\Support\Str;
 
-class SettingController extends Controller
+class SettingControllar extends Controller
 {
 
     public function index(Setting $setting)
@@ -17,6 +17,7 @@ class SettingController extends Controller
         $setting = Setting::first();
         $this->authorize('view', $setting);
         return view('dashboard.settings');
+
     }
     public function update(Request $request, Setting $setting)
     {

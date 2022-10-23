@@ -1,7 +1,8 @@
 <?php
 
-use app\Http\Controllers\Dashboard\SettingControllar;
+use App\Http\Controllers\Dashboard\SettingControllar;
 use App\Http\Controllers\Dashboard\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,18 +27,20 @@ use Illuminate\Support\Facades\Route;
 
 
 // Dashboard
+Route::get('/test', [testController::class, 'test'])->name('gg');
 
  
-Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'checkLogin']], function () {
+Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['auth', 'checkLogin']], function () {
 
   
+    
 
-    Route::get('/dashboard', function () {
+
+    Route::get('/', function () {
         return view('dashboard.layouts.layout');
     })->name('index');
 
-
-    Route::get('/settings', [SettingControllar.php::class, 'index'])->name('settings');
+    Route::get('/settings', [SettingControllar::class, 'index'])->name('settings');
 
     Route::post('/settings/update/{setting}', [SettingController::class, 'update'])->name('settings.update');
 
@@ -53,7 +56,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['a
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-*/
+
 
 Route::get('/', function () {
     return view('index');
