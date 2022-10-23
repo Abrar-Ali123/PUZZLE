@@ -11,16 +11,16 @@
 
             <li class="nav-item nav-dropdown">
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i>
-                    {{ __('words.categories') }}</a>
+                 </a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         @can('view', $setting)
-                            <a class="nav-link" href="{{ route('dashboard.category.create') }}"><i
-                                    class="icon-user-follow"></i>{{ __('words.add category') }}</a>
+                            <a class="nav-link" href=""><i
+                                    class="icon-user-follow"></i> </a>
                         @endcan
-                        <a class="nav-link" href="{{ route('dashboard.category.index') }}"><i
+                        <a class="nav-link" href=""><i
                                 class="icon-people"></i>
-                            {{ __('words.categories') }}</a>
+                           </a>
                     </li>
                 </ul>
             </li>
@@ -28,14 +28,14 @@
 
             <li class="nav-item nav-dropdown">
                 <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i>
-                    {{ __('words.posts') }}</a>
+                 </a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard.posts.create') }}"><i
-                                class="icon-user-follow"></i>{{ __('words.add post') }}</a>
-                        <a class="nav-link" href="{{ route('dashboard.posts.index') }}"><i
+                        <a class="nav-link" href=" "><i
+                                class="icon-user-follow"></i>  </a>
+                        <a class="nav-link" href=" "><i
                                 class="icon-people"></i>
-                            {{ __('words.posts') }}</a>
+                            </a>
                     </li>
                 </ul>
             </li>
