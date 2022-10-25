@@ -30,12 +30,12 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
         $settings = Setting::checkSettings();
-        $categories = Category::with('children')->where('parent' , 0)->orWhere('parent' , null)->get();
-        $lastFivePosts = Post::with('category','user')->orderBy('id')->limit(5)->get();
+        $categories = Category::with('children')->where('parent' , 0);
+        $lastFiveProducts = Post::with('category','user')->orderBy('id')->limit(5)->get();
         View()->share([
             'setting'=>$settings,
             'categories'=>$categories,
-            'lastFivePosts'=>$lastFivePosts,
+            'lastFiveProducts'=>$lastFiveProducts,
         ]);
     }
 }

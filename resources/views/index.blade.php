@@ -176,6 +176,7 @@
     <section class="st-section-top">
       <div class="container">
         <div class="row">
+        @foreach ($categories as $category)
           <div class="col-lg-4">
             <div class="st-iconbox st-style1 text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
               <div class="st-iconbox-icon">
@@ -188,6 +189,8 @@
               </div>
             </div>
           </div>
+          @endforeach
+
           <div class="col-lg-4">
             <div class="st-iconbox st-style1 text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
               <div class="st-iconbox-icon">
@@ -200,6 +203,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-lg-4">
             <div class="st-iconbox st-style1 text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
               <div class="st-iconbox-icon">
@@ -212,6 +216,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
