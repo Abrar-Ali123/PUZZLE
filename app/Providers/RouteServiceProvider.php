@@ -10,7 +10,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
+
 {
+    protected $namespace = 'App\Http\Controllers';
     /**
      * The path to the "home" route for your application.
      *
@@ -34,11 +36,19 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware(['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->prefix(LaravelLocalization::setLocale())
+                Route::middleware(['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->prefix(LaravelLocalization::setLocale())
+                ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+               
+                Route::middleware('Admin')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/Admin.php'));
+
+ 
+            
         });
     }
-
+    
     /**
      * Configure the rate limiters for the application.
      *

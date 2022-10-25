@@ -53,17 +53,18 @@
       <div class="container">
         <div class="st-main-header-in">
           <div class="st-site-branding">
+            <br>
+            <br>
             <a href="#" class="st-logo-link">
               
-            <img src="{{ asset('/img/light-img/logo.png') }}"alt="demo">
+            <img src="{{ asset($setting->logo) }}" alt="" style="height: 70px">
 
-
-            
 
           </a>
           </div>
           @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="hidden 
+                fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                     @else
@@ -148,7 +149,7 @@
           </div>
         </div>
         <div class="st-hero-img">
-        <img src="{{ asset('/img/light-img/hero-img.png') }}"alt="demo"></div>
+        <img src="{{ asset($setting->logo) }}" alt=""></div>
       </div>
       <div class="st-hero-slide st-style1 st-flex">
         <div class="container">

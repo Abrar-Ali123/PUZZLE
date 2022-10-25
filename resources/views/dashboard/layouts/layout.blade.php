@@ -1,5 +1,4 @@
 <!--
- * CoreUI - Open Source Bootstrap Admin Template
  * @version v1.0.0-alpha.2
  * @link http://coreui.io
  * Copyright (c) 2016 creativeLabs Łukasz Holeczek
@@ -38,7 +37,11 @@
     <header class="navbar">
         <div class="container-fluid">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
-            <a class="navbar-brand" href="#" style="background-image: url({{ asset($setting->logo) }});"></a>
+           
+ 
+            <a href="#" style="background-image: url({{ asset($setting->logo) }});"></a>
+            <img src="{{ asset($setting->logo) }}" alt="" style="height: 70px">
+
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item">
                     <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
@@ -54,19 +57,19 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">
-                        <span class="hidden-md-down">{{ __('words.settings') ?? 'None'}}</span>
+                        <span class="hidden-md-down">{{ __('dashboard.settings') ?? 'None'}}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-header text-xs-center">
-                            <strong>{{ __('words.settings') ?? 'None'}}</strong>
+                            <strong>{{ __('dashboard.settings') ?? 'None'}}</strong>
                         </div>
                         <a class="dropdown-item" href="{{ route('dashboard.users.edit', auth()->user()) }}"><i
-                                class="fa fa-user"></i> {{ __('words.user settings') ?? 'None'}}</a>
+                                class="fa fa-user"></i> {{ __('dashboard.user settings') ?? 'None'}}</a>
                         <div class="divider"></div>
 
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                            {{ __('words.logout') }}
+                            {{ __('dashboard.logout') }}
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

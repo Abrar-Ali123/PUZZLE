@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('locale')->index();
             $table->string('title');
             $table->text('content');
+            $table->text('address');
             $table->text('smallDesc');
             $table->unique(['setting_id', 'locale']);
            $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');

@@ -194,7 +194,7 @@ return [
     */
 
     'aliases' => [
-
+        'DB' => Illuminate\Support\Facades\DB::class,
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,

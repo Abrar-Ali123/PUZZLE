@@ -1,5 +1,4 @@
 @extends('dashboard.layouts.layout')
-
 @section('body')
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
@@ -107,24 +106,24 @@
                                             <br>
                                             
                                             <div class="form-group mt-3 col-md-12">
-                                                <label>{{ __('words.email') }} - {{ $lang }}</label>
+                                                <label>{{ __('words.email') ?? 'None'}} - {{ $lang }}</label>
                                                 <input type="text" name="{{$key}}[title]" class="form-control"
-                                                    placeholder="{{ __('words.email') }}"   value="{{$setting->translate($key)->title}}">
+                                                    placeholder="{{ __('words.email') }}"   value="{{$setting->translate($key)->title ?? 'None'}}">
                                             </div>
 
                                             
                                             <div class="form-group col-md-12">
                                                 
-                                                <label>{{ __('words.content') }}</label>
+                                                <label>{{ __('words.content') ?? 'None'}}</label>
                                                 
-                                                <textarea name="{{$key}}[content]" class="form-control" cols="30" rows="10">{{$setting->translate($key)->content}}</textarea>
+                                                <textarea name="{{$key}}[content]" class="form-control" cols="30" rows="10">{{$setting->translate($key)->content ?? 'None'}}</textarea>
                                                 
                                             </div>
 
 
                                             <div class="form-group col-md-12">
                                                 <label>{{ __('words.address') }}</label>
-                                                <input type="text"name="{{$key}}[address]" class="form-control"   value="{{$setting->translate($key)->address}}">
+                                                <input type="text"name="{{$key}}[address]" class="form-control"   value="{{$setting->translate($key)->address ?? 'None'}}">
                                             </div>
                                         </div>
                                     

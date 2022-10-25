@@ -2,9 +2,7 @@
 
 use App\Http\Controllers\Dashboard\SettingControllar;
 use App\Http\Controllers\Dashboard\UserController;
-
 use Illuminate\Support\Facades\Route;
-
 
 
 
@@ -29,28 +27,7 @@ use Illuminate\Support\Facades\Route;
 // Dashboard
 
  
-Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['auth', 'checkLogin']], function () {
 
-  
-    
-
-
-    Route::get('/', function () {
-        return view('dashboard.layouts.layout');
-    })->name('index');
-
-    Route::get('/settings', [SettingControllar::class, 'index'])->name('settings');
-
-    Route::post('/settings/update/{setting}', [SettingController::class, 'update'])->name('settings.update');
-
-
-    Route::get('/users/all', [UserController::class, 'getUsersDatatable'])->name('users.all');
-    Route::post('/users/delete', [UserController::class, 'delete'])->name('users.delete');
-
-    Route::resources([
-        'users' => UserController::class,
-     ]);
-});
 
 Auth::routes();
 
