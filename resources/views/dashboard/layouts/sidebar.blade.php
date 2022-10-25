@@ -38,8 +38,7 @@
             </li>
 
 
-            @can('view', $setting)
-                <li class="nav-item nav-dropdown">
+                 <li class="nav-item nav-dropdown">
                     <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i>
                         {{ __('dashboard.users') }}</a>
                     <ul class="nav-dropdown-items">
@@ -61,7 +60,6 @@
                     <a class="nav-link" href="{{ route('dashboard.settings') }}"><i class="icon-people"></i>
                         {{ trans('dashboard.settings') }}</a>
                 </li>
-            @endcan
-        </ul>
+         </ul>
     </nav>
 </div>
