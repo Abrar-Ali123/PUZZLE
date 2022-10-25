@@ -4,17 +4,17 @@
 @section('body')
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">{{__('words.dashboard')}}</li>
-        <li class="breadcrumb-item"><a href="#">{{ __('words.categories') }}</a>
+        <li class="breadcrumb-item">{{__('dashboard.dashboard')}}</li>
+        <li class="breadcrumb-item"><a href="#">{{ __('dashboard.categories') }}</a>
         </li>
-        <li class="breadcrumb-item active">{{ __('words.add user') }}</li>
+        <li class="breadcrumb-item active">{{ __('dashboard.add user') }}</li>
 
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu">
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                 <a class="btn btn-secondary" href="#"><i class="icon-speech"></i></a>
-                <a class="btn btn-secondary" href="./"><i class="icon-graph"></i> &nbsp;{{ __('words.categories') }}</a>
-                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;{{ __('words.add user') }}</a>
+                <a class="btn btn-secondary" href="./"><i class="icon-graph"></i> &nbsp;{{ __('dashboard.categories') }}</a>
+                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;{{ __('dashboard.add user') }}</a>
             </div>
         </li>
     </ol>
@@ -38,7 +38,7 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <strong>{{ __('words.users') }}</strong>
+                            <strong>{{ __('dashboard.users') }}</strong>
                         </div>
                         <div class="card-block">
 
@@ -46,15 +46,15 @@
 
 
                             <div class="form-group col-md-12">
-                                <label>{{ __('words.image') }}</label>
-                                <input type="file" name="image" class="form-control" placeholder="{{ __('words.image') }}"
+                                <label>{{ __('dashboard.image') }}</label>
+                                <input type="file" name="image" class="form-control" placeholder="{{ __('dashboard.image') }}"
                                    >
                             </div>
 
 
                           
                             <div class="form-group col-md-12">
-                                <label>{{ __('words.status') }}</label>
+                                <label>{{ __('dashboard.status') }}</label>
                                 <select name="parent" id="" class="form-control">
                                     <option value="0">قسم رئيسي</option>
                                     @foreach ($categories as $category)
@@ -67,7 +67,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <strong>{{ __('words.translations') }}</strong>
+                                <strong>{{ __('dashboard.translations') }}</strong>
                             </div>
                             <div class="card-block">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -87,13 +87,13 @@
                                             id="{{ $key }}" role="tabpanel" aria-labelledby="home-tab">
                                             <br>
                                             <div class="form-group mt-3 col-md-12">
-                                                <label>{{ __('words.title') }} - {{ $lang }}</label>
+                                                <label>{{ __('dashboard.title') }} - {{ $lang }}</label>
                                                 <input type="text" name="{{$key}}[title]" class="form-control"
-                                                    placeholder="{{ __('words.title') }}" >
+                                                    placeholder="{{ __('dashboard.title') }}" >
                                             </div>
 
                                             <div class="form-group col-md-12">
-                                                <label>{{ __('words.content') }}</label>
+                                                <label>{{ __('dashboard.content') }}</label>
                                                 <textarea name="{{$key}}[content]" class="form-control" cols="30" rows="10"></textarea>
                                             </div>
                                         </div>
