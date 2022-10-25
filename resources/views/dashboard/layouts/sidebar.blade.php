@@ -13,11 +13,9 @@
                     {{ __('dashboard.categories') }}</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        @can('view', $setting)
-                            <a class="nav-link" href="{{ route('dashboard.category.create') }}"><i
+                             <a class="nav-link" href="{{ route('dashboard.category.create') }}"><i
                                     class="icon-user-follow"></i>{{ __('dashboard.add category') }}</a>
-                        @endcan
-                        <a class="nav-link" href="{{ route('dashboard.category.index') }}"><i
+                         <a class="nav-link" href="{{ route('dashboard.category.index') }}"><i
                                 class="icon-people"></i>
                             {{ __('dashboard.categories') }}</a>
                     </li>
