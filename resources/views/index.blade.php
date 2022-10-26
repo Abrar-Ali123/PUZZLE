@@ -173,16 +173,35 @@
     </div>
     <!-- End Hero Slider -->
     <!-- Start Icon Box -->
+    @foreach ($categories as $category)
+                        <div class="nav-item dropdown">
+                            <a  @if (count($category->children) == 0) href="{{Route('category',$category->id)}}" @else href='#' @endif class="nav-link  @if (count($category->children) > 0) dropdown-toggle  @endif"
+                                @if(count($category->children) > 0)  data-toggle="dropdown" @endif
+                                 >{{ $category->title }}</a>
+                            @if (count($category->children) > 0)
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    @foreach ($category->children as $child)
+                                        <a href="{{Route('category',$child->id)}}" class="dropdown-item">{{ $child->title }}</a>
+                                    @endforeach
+
+
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
     <section class="st-section-top">
       <div class="container">
         <div class="row">
         @foreach ($categories as $category)
           <div class="col-lg-4">
             <div class="st-iconbox st-style1 text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-              <div class="st-iconbox-icon">
+               <img class="img-fluid w-100"     src="{{asset($category->image)}}" style="object-fit: cover;">
                 <i class="flaticon-focus"></i>
               </div>
-              <h3 class="st-iconbox-title">Business Growth</h3>
+              <a  @if (count($category->children) == 0) href="{{Route('category',$category->id)}}" @else href='#' @endif class="nav-link  @if (count($category->children) > 0) dropdown-toggle  @endif"
+                                @if(count($category->children) > 0)  data-toggle="dropdown" @endif
+                                 >{{ $category->title }}</a>
+              <h3 class="st-iconbox-title">{{$category->title}}</h3>
               <div class="st-iconbox-text">
                 Market penetration is the key for a business growth. Business
                 development processes to develop and implement.

@@ -29,7 +29,7 @@ class Category extends Model implements  TranslatableContract
 
     public function Products()
     {
-       return $this->hasMany(Post::class);
+       return $this->hasMany(Product::class);
     }
 
 }

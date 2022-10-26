@@ -1,39 +1,25 @@
 <?php
-
-use App\Http\Controllers\Dashboard\SettingControllar;
+use App\Http\Controllers\Website\IndexControllar;
+use App\Http\Controllers\Dashboard\productControllar;
 use App\Http\Controllers\Dashboard\UserController;
 use Illuminate\Support\Facades\Route;
 
 
+Route::get('/', [IndexControllar::class, 'index'])->name('index');
+Route::get('/categories/{category}', [WebsiteCategoryControllar::class, 'show'])->name('category');
+Route::get('/product/{product}', [productControllar::class, 'show'])->name('product');
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
-
-// website 
-
-
-
-
-// Dashboard
-
- 
-
+Route::resources([
+    'users' => UserController::class,
+    'category' => CategoryControllar::class,
+    'products' => productsControllar::class,
+]);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/', function () {
-    return view('index');
-});
+ 
+
+
