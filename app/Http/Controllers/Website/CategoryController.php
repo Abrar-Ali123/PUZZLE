@@ -14,6 +14,6 @@ class CategoryControllar extends Controller
         $category = $category->load('children');
         $products = Products::where('category_id' , $category->id)->paginate(15);
         
-        return view('website.category' , compact('category','products'));
+        return view('index' , compact('category','products'));
     }
 }

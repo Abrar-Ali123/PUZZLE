@@ -10,6 +10,6 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
-       return view('website.product' , compact('product'));
+       return view('index' , compact('product'));
     }
 }
