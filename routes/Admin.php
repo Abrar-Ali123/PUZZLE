@@ -24,6 +24,7 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
     Route::Post('/products/delete', [ProductsControllar::class, 'delete'])->name('Products.delete');
 
 
+    
     Route::get('/category/all', [CategoryControllar::class, 'get'])->name('category.all');
     Route::Post('/category/delete', [CategoryControllar::class, 'delete'])->name('category.delete');
 

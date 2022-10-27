@@ -34,15 +34,7 @@ class ProductsControllar extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $categories = Category::all();
-        if (count($categories)>0) {
-            return view('dashboard.Products.add' , compact('categories'));
-        }
-        abort(404);
-       
-    }
+   
 
 
     public function get()
@@ -80,17 +72,25 @@ class ProductsControllar extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function create(Request $request)
+    {
+         $categories = Category::all();
+     {
+            return view('dashboard.products.add' , compact('categories'));
+        }
+        
+    }
     public function store(Request $request)
     {
-        $this->authorize('create' , $this->Productmodel);
-        $Product = Product::create($request->except('image','_token'));
-        $Product->update(['user_id' => auth()->user()->id]);
+        $product = Product::create($request->except('_token'));
+        $product->update(['user_id' => auth()->user()->id]);
         if ($request->has('image')) {
-           $Product->update(['image'=>$this->upload($request->image)]);
+           $product->update(['image'=>$this->upload($request->image)]);
         }
-       return redirect()->route('dashboard.Products.index');
+       return redirect()->route('dashboard.products.index');
     }
-
+ 
     /**
      * Display the specified resource.
      *

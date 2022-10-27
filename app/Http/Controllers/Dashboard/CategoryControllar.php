@@ -54,19 +54,10 @@ class CategoryControllar extends Controller
             ->rawColumns(['action', 'status', 'title'])
             ->make(true);
     }
-
-    
-    public function create()
-    {
-         $categories = Category::whereNull('parent')->orWhere('parent', 0)->get();
-        return view('dashboard.categories.add', compact('categories'));
-    }
-
    
     public function store(Request $request)
     {
-        
-         $category =  Category::create($request->except('image', '_token'));
+        $category =  Category::create($request->except('_token'));
         if ($request->file('image')) {
             $file = $request->file('image');
             $filename = Str::uuid() . $file->getClientOriginalName();
@@ -79,15 +70,13 @@ class CategoryControllar extends Controller
 
     public function edit(Category $category)
     {
-        $this->authorize('viewAny', $this->setting);
-        $categories = Category::whereNull('parent')->orWhere('parent', 0)->get();
+         $categories = Category::whereNull('parent')->orWhere('parent', 0)->get();
         return view('dashboard.categories.edit', compact('category', 'categories'));
     }
  
     public function update(Request $request, Category $category)
     {
-        $this->authorize('viewAny', $this->setting);
-        $category->update($request->except('image', '_token'));
+         $category->update($request->except('_token'));
         if ($request->file('image')) {
             $file = $request->file('image');
             $filename = Str::uuid() . $file->getClientOriginalName();
@@ -102,7 +91,7 @@ class CategoryControllar extends Controller
   
     public function delete(Request $request)
     {
-        $this->authorize('viewAny', $this->setting);
+
         if (is_numeric($request->id)) {
             Category::where('parent', $request->id)->delete();
             Category::where('id', $request->id)->delete();
