@@ -91,8 +91,7 @@ aria-hidden="true">
     <script type="text/javascript">
         $(function() {
             var table = $('#table_id').DataTable({
-                processing: true,
-                serverSide: true,
+       
                 ajax: "{{ Route('dashboard.category.all') }}",
                 columns: [
                  
@@ -113,7 +112,7 @@ aria-hidden="true">
 
         });
 
-        $('#table_id tbody').on('click', '#deleteBtn', function(argument) {
+        $('tbody').on('click', '#deleteBtn', function(argument) {
             var id = $(this).attr("data-id");
             console.log(id);
             $('#deletemodal #id').val(id);

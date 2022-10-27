@@ -72,8 +72,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('update', $this->user);
-        $data = [
+         $data = [
             'name' => 'required|string',
             'status' => 'nullable|in:null,admin,writer',
             'email' => 'required|email|unique:users',
@@ -109,8 +108,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        $this->authorize('update', $user);
-        return view('dashboard.users.edit', compact('user'));
+         return view('dashboard.users.edit', compact('user'));
     }
 
     /**
@@ -122,8 +120,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $this->authorize('update', $user);
-        $user->update($request->all());
+         $user->update($request->all());
         return redirect()->route('dashboard.users.index');
     }
 
@@ -141,8 +138,7 @@ class UserController extends Controller
 
     public function delete(Request $request)
     {
-        $this->authorize('delete', $this->user);
-        if (is_numeric($request->id)) {
+         if (is_numeric($request->id)) {
             User::where('id', $request->id)->delete();
         }
 

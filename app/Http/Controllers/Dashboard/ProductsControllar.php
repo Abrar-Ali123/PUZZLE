@@ -110,8 +110,7 @@ class ProductsControllar extends Controller
      */
     public function edit(Product $Product)
     {
-        $this->authorize('update' , $Product);
-        $categories = Category::all();
+         $categories = Category::all();
        return view('dashboard.Products.edit' , compact('Product','categories'));
     }
 
@@ -124,8 +123,7 @@ class ProductsControllar extends Controller
      */
     public function update(Request $request, Product $Product)
     {
-        $this->authorize('update' , $Product);
-        $Product->update($request->except('image','_token'));
+         $Product->update($request->except('image','_token'));
         $Product->update(['user_id' => auth()->user()->id]);
         if ($request->has('image')) {
             $Product->update(['image'=>$this->upload($request->image)]);
@@ -148,8 +146,7 @@ class ProductsControllar extends Controller
     public function delete (Request $request)
     {
 
-        $this->authorize('delete' , $this->Productmodel->find($request->id));
-       if(is_numeric($request->id)){
+        if(is_numeric($request->id)){
            Product::where('id' , $request->id)->delete();
        }
        return redirect()->route('dashboard.Products.index');
