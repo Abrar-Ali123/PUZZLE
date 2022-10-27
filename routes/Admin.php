@@ -2,7 +2,7 @@
 use App\Http\Controllers\Dashboard\CategoryControllar;
 use App\Http\Controllers\Dashboard\ProductsControllar;
 use App\Http\Controllers\Dashboard\SettingControllar;
-use App\Http\Controllers\Dashboard\UserController;
+use App\Http\Controllers\Dashboard\UserControllar;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,8 +19,7 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
     Route::Post('/settings/update/{setting}', [SettingControllar::class, 'update'])->name('settings.update');
 
     
-    Route::get('/products/all', [ProductsControllar::class, 'get'])->name('Products.all');
-    Route::get('/products/all', [ProductsControllar::class, 'get'])->name('Products.all');
+     Route::get('/products/all', [ProductsControllar::class, 'get'])->name('Products.all');
     Route::Post('/products/delete', [ProductsControllar::class, 'delete'])->name('Products.delete');
 
 
@@ -31,15 +30,15 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
 
 
 
-    Route::get('/users/all', [UserController::class, 'get'])->name('users.all');
-    Route::Post('/users/delete', [UserController::class, 'delete'])->name('users.delete');
+    Route::get('/users/all', [UserControllar::class, 'get'])->name('users.all');
+    Route::Post('/users/delete', [UserControllar::class, 'delete'])->name('users.delete');
 
 
 
 
 
     Route::resources([
-        'users' => UserController::class,
+        'users' => UserControllar::class,
         'category' => CategoryControllar::class,
         'Products' => ProductsControllar::class,
      ]);
