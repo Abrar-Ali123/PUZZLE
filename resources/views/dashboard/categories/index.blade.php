@@ -1,121 +1,136 @@
+
 @extends('dashboard.layouts.layout')
 
 @section('body')
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">{{__('words.dashboard')}}</li>
-        <li class="breadcrumb-item"><a href="#">{{__('words.dashboard')}}</a>
+        <li class="breadcrumb-item"><a href="#">{{ __('words.categories') }}</a>
         </li>
-        <li class="breadcrumb-item active">{{__('words.categories')}}</li>
+        <li class="breadcrumb-item active">{{ __('words.add user') }}</li>
 
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu">
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                 <a class="btn btn-secondary" href="#"><i class="icon-speech"></i></a>
-                <a class="btn btn-secondary" href="./"><i class="icon-graph"></i> &nbsp;{{__('words.dashboard')}}</a>
-                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;{{__('words.categories')}}</a>
+                <a class="btn btn-secondary" href="./"><i class="icon-graph"></i> &nbsp;{{ __('words.categories') }}</a>
+                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;{{ __('words.add user') }}</a>
             </div>
         </li>
     </ol>
 
 
-    {{-- {{dd($setting)}} --}}
-
     <div class="container-fluid">
 
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa fa-align-justify"></i> Striped Table
-                </div>
-                <div class="card-block">
-                    <table class="table table-striped" id="table_id">
-                        <thead>
-                            <tr>
-                                <th>Category</th>
-                                <th>Parent</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+        <div class="animated fadeIn">
+            <form action="{{ Route('dashboard.category.store') }}" method="post">
+                @csrf
+                @method('POST')
+                <div class="row">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>{{ __('words.users') }}</strong>
+                        </div>
+                        <div class="card-block">
 
 
-                        </tbody>
-                    </table>
 
-                </div>
-            </div>
+
+                            <div class="form-group col-md-12">
+                                <label>{{ __('words.image') }}</label>
+                                <input type="file" name="image" class="form-control" placeholder="{{ __('words.image') }}"
+                                   >
+                            </div>
+
+
+                          
+                            <div class="form-group col-md-12">
+                                <label>{{ __('words.status') }}</label>
+                                <select name="parent" id="" class="form-control">
+                                    <option value="0">قسم رئيسي</option>
+                                    @foreach ($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->title}}</option>
+                                    @endforeach
+                                </select>
+                               
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>{{ __('words.translations') }}</strong>
+                            </div>
+                            <div class="card-block">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                                    @foreach (config('app.languages') as $key => $lang)
+                                        <li class="nav-item">
+                                            <a class="nav-link @if ($loop->index == 0) active @endif"
+                                                id="home-tab" data-toggle="tab" href="#{{ $key }}" role="tab"
+                                                aria-controls="home" aria-selected="true">{{ $lang }}</a>
+                                        </li>
+                                    @endforeach
+
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    @foreach (config('app.languages') as $key => $lang)
+                                        <div class="tab-pane mt-3 fade @if ($loop->index == 0) show active in @endif"
+                                            id="{{ $key }}" role="tabpanel" aria-labelledby="home-tab">
+                                            <br>
+                                            <div class="form-group mt-3 col-md-12">
+                                                <label>{{ __('words.title') }} - {{ $lang }}</label>
+                                                <input type="text" name="{{$key}}[title]" class="form-control"
+                                                    placeholder="{{ __('words.title') }}" >
+                                            </div>
+
+                                            <div class="form-group col-md-12">
+                                                <label>{{ __('words.content') }}</label>
+                                                <textarea name="{{$key}}[content]" class="form-control" cols="30" rows="10"></textarea>
+                                            </div>
+                                        </div>
+                                    @endforeach
+
+                                </div>
+
+
+
+                            </div>
+
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
+                                    Submit</button>
+                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i>
+                                    Reset</button>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
+                                Submit</button>
+                      
+                        </div>
+
+
+
+                    </div>
+            </form>
         </div>
     </div>
-
-
-    {{-- delete --}}
-<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-aria-hidden="true">
-<div class="modal-dialog">
-    <form action="{{ Route('dashboard.category.delete') }}" method="POST">
-        <div class="modal-content">
-
-            <div class="modal-body">
-                @csrf
-
-                <div class="form-group">
-                    <p>{{ __('words.sure delete') }}</p>
-                    @csrf
-                    <input type="hidden" name="id" id="id">
-                </div>
-
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-info" data-dismiss="modal">{{ __('words.close') }}</button>
-                <button type="submit" class="btn btn-danger">{{ __('words.delete') }} </button>
-            </div>
-        </div>
-    </form>
-    <!-- /.modal-content -->
-</div>
-<!-- /.modal-dialog -->
-</div>
-{{-- delete --}}
 @endsection
-
-
-
-
-
-
-
-@push('javascripts')
-    <script type="text/javascript">
-        $(function() {
-            var table = $('#table_id').DataTable({
-       
-                ajax: "{{ Route('dashboard.category.all') }}",
-                columns: [
-                 
-                    {
-                        data: 'title',
-                        name: 'title'
-                    },
-                    {
-                        data: 'parent',
-                        name: 'parent'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                    }
-                ]
-            });
-
-        });
-
-        $('tbody').on('click', '#deleteBtn', function(argument) {
-            var id = $(this).attr("data-id");
-            console.log(id);
-            $('#deletemodal #id').val(id);
-        })
-    </script>
-@endpush

@@ -55,6 +55,11 @@ class CategoryControllar extends Controller
             ->make(true);
     }
    
+    public function create()
+    {
+         $categories = Category::whereNull('parent')->orWhere('parent', 0)->get();
+        return view('dashboard.categories.add', compact('categories'));
+    }
     public function store(Request $request)
     {
         $category =  Category::create($request->except('_token'));
