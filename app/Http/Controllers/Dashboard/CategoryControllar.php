@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Http\Controllers\Dashboard;
+ namespace app\Http\Controllers\Dashboard;
  
 
 use App\Http\Controllers\Controller;
@@ -82,6 +81,7 @@ class CategoryControllar extends Controller
     public function update(Request $request, Category $category)
     {
          $category->update($request->except('_token'));
+
         if ($request->file('image')) {
             $file = $request->file('image');
             $filename = Str::uuid() . $file->getClientOriginalName();
@@ -90,6 +90,7 @@ class CategoryControllar extends Controller
 
             $category->update(['image' => $path]);
         }
+        
         return redirect()->route('dashboard.category.index');
     }
  

@@ -8,7 +8,6 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-use DataTables;
 
 class ProductsControllar extends Controller
 {
@@ -84,8 +83,7 @@ class ProductsControllar extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->except('_token'));
-        $product->update(['user_id' => auth()->user()->id]);
-        if ($request->has('image')) {
+         if ($request->has('image')) {
            $product->update(['image'=>$this->upload($request->image)]);
         }
        return redirect()->route('dashboard.products.index');
