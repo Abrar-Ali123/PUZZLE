@@ -40,7 +40,7 @@ class ProductsControllar extends Controller
     public function get()
     {
         $data = Product::select('*')->with('category');
-        return  Product::of($data)
+        return  DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
 
