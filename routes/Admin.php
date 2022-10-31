@@ -20,6 +20,8 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
 
     
      Route::get('/products/all', [ProductsControllar::class, 'get'])->name('Products.all');
+     Route::Post('/products/store', [ProductsControllar::class, 'store'])->name('Products.storeProduct');
+
     Route::Post('/products/delete', [ProductsControllar::class, 'delete'])->name('Products.delete');
 
 

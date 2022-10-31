@@ -3,17 +3,17 @@
 @section('body')
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">{{ __('dashboard.dashboard') }}</li>
+        <li class="breadcrumb-item">{{ __('dashboard.dashboard') }} GG</li>
         <li class="breadcrumb-item"><a href="#">{{ __('dashboard.categories') }}</a>
         </li>
-        <li class="breadcrumb-item active">{{ __('dashboard.add user') }}</li>
+        <li class="breadcrumb-item active">{{ __('dashboard.add product') }}</li>
 
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu">
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                 <a class="btn btn-secondary" href="#"><i class="icon-speech"></i></a>
                 <a class="btn btn-secondary" href="./"><i class="icon-graph"></i> &nbsp;{{ __('dashboard.categories') }}</a>
-                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;{{ __('dashboard.add user') }}</a>
+                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;{{ __('dashboard.add product') }}</a>
             </div>
         </li>
     </ol>
@@ -22,9 +22,9 @@
     <div class="container-fluid">
 
         <div class="animated fadeIn">
-            <form action="{{ Route('dashboard.Products.store') }}" method="Product" enctype="multipart/form-data">
+            <form action="{{ Route('dashboard.Products.storeProduct') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                @method('Product')
+                @method('post')
                 <div class="row">
                     @if ($errors->any())
                         <div class="alert alert-danger">
