@@ -7,6 +7,7 @@ use App\Http\Trait\UploadImage;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
+use DataTables;
 use Illuminate\Http\Request;
 
 class ProductsControllar extends Controller
@@ -39,7 +40,7 @@ class ProductsControllar extends Controller
     public function get()
     {
         $data = Product::select('*')->with('category');
-        return  Datatables::of($data)
+        return  Product::of($data)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
 
@@ -82,7 +83,7 @@ class ProductsControllar extends Controller
     }
     public function store(Request $request)
     {
-        $product = Product::create($request->except('_token'));
+        $product = Product::create($request);
          if ($request->has('image')) {
            $product->update(['image'=>$this->upload($request->image)]);
         }
