@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use DB;
 
-
+use Hash;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Admin',
             'email' => 'Admin@Admin.com',
-            'password' => '1234567890',
+            'password' => Hash::Make("1234567890"),
             'status' => 'admin',
          ]);
     }
