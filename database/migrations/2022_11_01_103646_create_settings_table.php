@@ -19,15 +19,11 @@ return new class extends Migration
             $table->string('favicon')->unllable();
             $table->string('images')->unllable();
             $table->string('twitter')->unllable();
-            $table->string('facebook')->unllable();
             $table->string('instagram')->unllable();
             $table->string('tiktok')->unllable();
             $table->string('snapchat')->unllable();
-            $table->string('phone')->unllable();
-            $table->string('email')->unllable();
-            $table->string('address')->unllable();
 
-        
+            
 
             $table->timestamps();
         });

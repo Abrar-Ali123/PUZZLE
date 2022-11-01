@@ -1,9 +1,10 @@
 <?php
 
 namespace Database\Seeders;
-
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+
 use DB;
 use Hash;
 
@@ -17,8 +18,8 @@ class UserSeeder extends Seeder
     public function run()
     {
 
-        DB::table('users')->insert([
-            'name' => 'John Doe',
+        User::create([
+             'name' => 'John Doe',
             'email' => 'doejohn@gmail.com',
             'password' => Hash::Make("1234567890"),
             'status' => 'admin',

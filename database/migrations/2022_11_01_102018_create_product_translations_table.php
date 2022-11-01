@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('product_translations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('product_id')->unsigned();;
             $table->string('locale')->index();
             $table->string('title');
             $table->text('content');
             $table->text('smallDesc');
             $table->unique(['product_id', 'locale']);
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-        });
-    }
+         });
+}
     /**
      * Reverse the migrations.
      *

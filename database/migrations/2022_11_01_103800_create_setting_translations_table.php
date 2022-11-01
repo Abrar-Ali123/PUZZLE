@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('setting_translations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('setting_id');
-            $table->string('locale')->index();
-            $table->string('title');
-            $table->text('content');
-            $table->text('address');
-            $table->text('smallDesc');
+            $table->unsignedBigInteger('setting_id')->unsigned();
+            $table->string('locale')->index();  // ar en fr tr 
+            $table->string('title')->nullable();
+            $table->text('content')->nullable();
+            $table->text('address')->nullable();
             $table->unique(['setting_id', 'locale']);
-           $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
+            $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
         });
     }
 

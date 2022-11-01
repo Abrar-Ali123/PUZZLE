@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use Illuminate\Support\Facades\Validator;
+//use Illuminate\Support\Facades\validated;
 use App\Http\Controllers\Controller;
 use App\Http\Trait\UploadImage;
 use App\Models\Category;
@@ -83,11 +85,23 @@ class ProductsControllar extends Controller
     }
     public function store(Request $request)
     {
-        $product = Product::create($request);
-         if ($request->has('image')) {
+        $data =     $validatedData = $request->validated();
+
+        // Data that needs translation
+        
+                foreach (config('app.languages') as $key => $value) {
+                    $data[$key . '*.title'] = 'nullable|string';
+                    $data[$key . '*.content'] = 'nullable|string';
+                    $data[$key . '*.smallDesc'] = 'nullable|string';
+                    $data[$key . '*.smallDesc'] = 'nullable|string';
+                }
+
+        $product = Product::create($request->except('_token'));
+        
+        if ($request->has('image')) {
            $product->update(['image'=>$this->upload($request->image)]);
         }
-       return redirect()->route('dashboard.products.index');
+       return redirect()->route('dashboard.Products.index');
     }
  
     /**
@@ -122,9 +136,8 @@ class ProductsControllar extends Controller
      */
     public function update(Request $request, Product $Product)
     {
-         $Product->update($request->except('image','_token'));
-        $Product->update(['user_id' => auth()->user()->id]);
-        if ($request->has('image')) {
+         $Product->update($request->except('_token'));
+         if ($request->has('image')) {
             $Product->update(['image'=>$this->upload($request->image)]);
          }
        return redirect()->route('dashboard.Products.edit' , $Product);
