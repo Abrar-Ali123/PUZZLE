@@ -11,6 +11,13 @@ use App\Models\Product;
 use App\Models\Tag;
 use DataTables;
 use Illuminate\Http\Request;
+use Symfony\Component\VarDumper\VarDumper;
+
+use App\Http\Requests\ProductRequest;
+
+
+// use App\Http\Requests\SettingRequest;
+use \Illuminate\Support\Str;
 
 class ProductsControllar extends Controller
 {
@@ -83,7 +90,7 @@ class ProductsControllar extends Controller
         }
         
     }
-    public function store(Request $request)
+    public function store(ProductRequest $request, Product $product)
     {
         $data =     $validatedData = $request->validated();
 
