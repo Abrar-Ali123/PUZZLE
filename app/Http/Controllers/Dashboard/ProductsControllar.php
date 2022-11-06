@@ -92,16 +92,8 @@ class ProductsControllar extends Controller
     }
     public function store(ProductRequest $request, Product $product)
     {
-        $data =     $validatedData = $request->validated();
-
-        // Data that needs translation
         
-                foreach (config('app.languages') as $key => $value) {
-                    $data[$key . '*.title'] = 'nullable|string';
-                    $data[$key . '*.content'] = 'nullable|string';
-                    $data[$key . '*.smallDesc'] = 'nullable|string';
-                    $data[$key . '*.smallDesc'] = 'nullable|string';
-                }
+        $validatedData = $request->validated();
 
         $product = Product::create($request->except('_token'));
         

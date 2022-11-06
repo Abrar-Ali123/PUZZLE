@@ -9,7 +9,7 @@ Auth::routes();
 
 
 Route::get('/', [IndexControllar::class, 'index'])->name('index');
-// Route::get('/categories/{category}', [WebsiteCategoryControllar::class, 'show'])->name('category');
+Route::get('/categories/{category}', [WebsiteCategoryControllar::class, 'show'])->name('category');
 // Route::get('/product/{product}', [productControllar::class, 'show'])->name('product');
 
 Route::resources([

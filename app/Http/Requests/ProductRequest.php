@@ -21,10 +21,17 @@ class ProductRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+    
+
     public function rules()
     {
-        return [
-            'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        ];
+
+        foreach (config('app.languages') as $key => $value) {
+            $data[$key . '.title'] = 'nullable|string|required';
+            $data[$key . '.content'] = 'nullable|string|required';
+            $data[$key . '.smallDesc'] = 'nullable|string|required';
+            $data[$key . '.smallDesc'] = 'nullable|string|required';
+        }
+        return $data;
     }
 }
