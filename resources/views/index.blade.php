@@ -1,6 +1,134 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
+
+<style>
+ 
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + span.circle {
+    left: 64px;
+    background-color: #FABC62;
+    box-shadow: 0 0 40px 0 #FABC62;
+}
+input[type="checkbox"]:checked + span.circle::before, input[type="checkbox"]:checked + span.circle::after {
+    background-color: rgba(250, 188, 98, 0);
+}
+label.slider {
+    margin-top: 50vh;
+    border: 6px solid #06121C;
+    border-radius: 100px;
+    width: 128px;
+    height: 64px;
+    position: relative;
+    background-color: #06121C;
+    box-sizing: content-box;
+    z-index: 1;
+    /*overflow: hidden; Add if using span.circle::before */
+    transition: border .3s, background-color .3s, box-shadow .3s;
+    cursor: pointer;
+}
+label.slider.isChecked {
+    border: 6px solid #167694;
+    background-color: #167694;
+}
+label.slider:hover {
+    box-shadow: 0 0 6px rgba(239, 239, 239, 0.32);
+}
+span.circle {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background-color: #FEFAF4;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transition: left .3s, background-color .7s, box-shadow .3s;
+    box-shadow: 0 0 20px 0 #FEFAF4;
+}
+span.circle::before, span.circle::after {
+    content: '';
+    background-color: #dcd8d3;
+    position: absolute;
+    border-radius: 50%;
+    transition: background-color .7s;
+}
+span.circle::before {
+    height: 6px;
+    width: 6px;
+    bottom: 10px;
+    right: 20px;
+}
+span.circle::after {
+    height: 10px;
+    width: 10px;
+    bottom: 20px;
+    right: 10px;
+}
+/* used for color slide in from the side
+span.circle::before {
+    content: '';
+    background-color: rgba(17, 220, 67, 1);
+    height: 64px;
+    width: 128px;
+    z-index: -1;
+    position: absolute;
+    left: -96px;
+}
+*/
+ 
+ 
+img.c1 {
+    top: 11%;
+    left: 34%;
+    width: 10%;
+    animation: movingClouds 10s linear infinite;
+}
+img.c2 {
+    top: 14%;
+    left: 78%;
+    width: 8%;
+    animation: movingClouds 13s linear infinite;}
+img.c3 {
+    top: 40%;
+    left: 10%;
+    width: 30%;
+    animation: movingClouds 15s linear infinite;}
+img.c4 {
+    top: 37%;
+    left: 60%;
+    width: 18%;
+    animation: movingClouds 18s linear infinite;}
+img.c5 {
+    bottom: 0;
+    left: 55%;
+    width: 40%;
+    animation: movingClouds 20s linear infinite;
+}
+@keyframes movingClouds {
+    0% {left: 110%;}
+    100% {left: -50%;}
+}
+
+img.stars {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+body.bodyChecked img.stars {
+    opacity: 0;
+}
+</style>
+
+
+
   <!-- Meta Tags -->
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -11,7 +139,7 @@
   <!-- Page Title -->
   <title>puzzle</title>
   <!-- Favicon Icon -->
-   <link rel="icon"   href="{{ asset('/img/favicon.png') }}">
+  <link rel="icon"   href="{{ asset('/img/favicon.png') }}">
   <!-- Stylesheets -->
     
  
@@ -34,7 +162,10 @@
   <script  type="text/javascript" src="{{ asset('/js/vendor/jquery-1.12.4.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/js/vendor/modernizr-3.5.0.min.js') }}"></script>
 
-  <body class="st-black-version rtl">
+
+  <body >
+
+
     <div id="st-preloader">
       <div class="st-preloader-wave"></div>
       <div class="st-preloader-wave"></div>
@@ -47,6 +178,7 @@
         <div class="container">
           <div class="st-main-header-in">
             <div class="st-site-branding">
+              
               <a href="#" class="st-logo-link"><img src="{{ asset($setting->logo) }}" alt="logo"></a>
             </div>
             <!-- For Site Title -->
@@ -63,8 +195,6 @@
                 <span></span>
               </div>
               <nav class="st-nav st-desktop-nav">
-
-             
                 <ul class="st-nav-list onepage-nav">
                   <li class="st-has-children"><a href="#home" class="smooth-scroll">
                     {{ LaravelLocalization::getCurrentLocaleNative() }} 
@@ -77,6 +207,11 @@
                       @endforeach
                     </ul>
                   </li>
+              
+
+
+                  
+        <li><a href="#Home" class="slider">{{ __('index.Home') }}</a></li>
                   <li><a href="#Home" class="smooth-scroll">{{ __('index.Home') }}</a></li>
                   <li><a href="#about" class="smooth-scroll">{{ __('index.About') }}</a></li>
                   <li><a href="#service" class="smooth-scroll">{{ __('index.Service') }}</a></li>
@@ -120,6 +255,10 @@
         </div>
      
       </div>
+      <label class="slider">
+            <input type="checkbox" id="check">
+            <span class="circle"></span>
+        </label>
       <!-- End Hero Slider -->
       <!-- Start Icon Box -->
       <section class="st-section-top" id="service">
@@ -178,9 +317,8 @@
             <div class="col-lg-6">
               <div class="st-section-heading st-style1">
                 <h3>من نحن</h3>
-                <h2>فــريــق تــقــنــي مـن الـكـفـاءات الـعـالـيـة مـخـتــصــون فــي
-                  الــبــرمـجـة والـتـصـمـيـم نــقــدم مـجـمـوعـة مـن الـخـدمـات
-                  الـتـقـنـيـة الـتـي تـجـعـل مـشـروعـك أكـثـر إكـتـمـاًال وفعالية</h2>
+                <h2>فريق تقني من الكفاءات العالية مختصون 
+                       </h2>
               </div>
               <div class="st-about-text">
                 <p>نـسعـى في بـزل لتـقنيـة المعلومـات لإلرتقـاء بمستـوى
@@ -417,6 +555,84 @@
       </section>
       <!-- End CTA Section -->
         
+       <!-- Start Pricing Plan -->
+    <section class="st-pricing-wrap st-section" id="price">
+      <div class="container">
+        <div class="st-section-heading st-style2 text-center">
+          <h2>Pricing Plan</h2>
+          <div class="st-seperator">
+            <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
+            <img src="assets/img/light-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
+            <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
+          </div>
+          <p>Pricing strategy in which the selling price is determined by adding a specific <br>amount markup to a product's unit cost.</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="st-price-card text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+              <div class="st-price-card-img"><img src="assets/img/light-img/price-img1.png" alt="demo"></div>
+              <h3 class="st-price-card-title">Economy</h3>
+              <div class="st-price">
+                <h3>19</h3>
+                
+
+                <span>per month</span>
+              </div>
+              <ul class="st-price-card-feature st-mp0">
+                <li>Free Suppport 24/7</li>
+                <li>Databases Download</li>
+                <li>Maintenance Email</li>
+                <li>Unlimited Traffic</li>
+              </ul>
+              <div class="st-price-card-btn">
+                <a href="#" class="st-btn st-style1 st-size1 st-color1">Start The Plan</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="st-price-card text-center st-featured-price wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+              <div class="st-price-card-img"><img src="assets/img/light-img/price-img2.png" alt="demo"></div>
+              <h3 class="st-price-card-title">Deluxe</h3>
+              <div class="st-price">
+                <h3>$29</h3>
+                <span>per month</span>
+              </div>
+              <ul class="st-price-card-feature st-mp0">
+                <li>Free Suppport 24/7</li>
+                <li>Databases Download</li>
+                <li>Maintenance Email</li>
+                <li>Unlimited Traffic</li>
+              </ul>
+              <div class="st-price-card-btn">
+                <a href="#" class="st-btn st-style1 st-size1 st-color2">Start The Plan</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="st-price-card text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+              <div class="st-price-card-img"><img src="assets/img/light-img/price-img3.png" alt="demo"></div>
+              <h3 class="st-price-card-title">Ultimate</h3>
+              <div class="st-price">
+                <h3>$49</h3>
+                <span>per month</span>
+              </div>
+              <ul class="st-price-card-feature st-mp0">
+                <li>Free Suppport 24/7</li>
+                <li>Databases Download</li>
+                <li>Maintenance Email</li>
+                <li>Unlimited Traffic</li>
+              </ul>
+              <div class="st-price-card-btn">
+                <a href="#" class="st-btn st-style1 st-size1 st-color1">Start The Plan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Pricing Plan -->
       
       <!-- Start Contact Section -->
       <section class="st-contact-wrap st-gray-bg st-section" id="contact">
@@ -545,5 +761,24 @@
     </div>
     <!-- End Video Popup -->
     <!-- Scripts -->
+    <script>
+$(document).ready(function(){
+
+//Toggle Class to change border on label, and add class to body
+$("#check").change(function(){
+    if($(this).is(":checked")) {
+        $(".slider").addClass("isChecked");
+        $("body").addClass("st-black-version");
+        $(".cloud").css("opacity",".5");
+    } else {
+
+        $(".slider").removeClass("isChecked");
+        $("body").removeClass("st-black-version");
+        $(".cloud").css("opacity","0");
+    }
+});
+
+});
+</script>
 </body>
 </html>

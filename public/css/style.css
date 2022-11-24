@@ -5037,12 +5037,12 @@ blockquote {
 ----------------------------------------------------------------*/
 
 .st-black-version {
-    background-color: #121214;
+    background-color: #090424;
     color: #fff;
 }
 
 .st-black-version .st-hero-slide.st-style1 {
-    background-color: #151517;
+    background-color: #080329;
 }
 
 .st-black-version h1,
@@ -5110,7 +5110,7 @@ blockquote {
 }
 
 .st-black-version .st-header.st-sticky-menu.st-sticky-active {
-    background: #151517;
+    background: #080329;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
@@ -5287,7 +5287,7 @@ blockquote {
 }
 
 .st-black-version .st-content {
-    background-color: #121214;
+    background-color: #090424;
 }
 
 .st-black-version .st-mobile-nav {
