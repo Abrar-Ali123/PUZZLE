@@ -654,12 +654,22 @@ body.bodyChecked img.stars {
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
-              <div id="cf-msg"></div>
-              <form action="#" method="post" class="st-contact-form" id="cf">
-                <input type="text" placeholder="الاسم الكامل" id="name" name="name">
-                <input type="text" placeholder="البريد الإلكتروني" id="email" name="email">
-                <input type="text" placeholder="الموضوع" id="subject" name="subject">
-                <textarea cols="30" rows="10" placeholder="الرسالة" id="msg" name="msg"></textarea>
+              @if(Session::has('errors'))
+              <div class="text-center alert alert-light">
+                <h5 style="font-weight: bold;">فضلاً قم بملىء كل الحقول</h5>
+              </div>
+              @endif
+              @if (session()->has('message'))
+              <div class="text-center alert alert-light">
+                  <h3 style="font-weight: bold;">{{ session('message') }}</h3>
+              </div>
+              @endif
+              <form action="{{route('index.contact')}}" method="post" class="st-contact-form">
+                @csrf
+                <input type="text" placeholder="الاسم الكامل" id="name" name="name" required>
+                <input type="text" placeholder="البريد الإلكتروني" id="email" name="email" required>
+                <input type="text" placeholder="الموضوع" id="subject" name="subject" required>
+                <textarea cols="30" rows="10" placeholder="الرسالة" id="msg" name="msg" required></textarea>
                 <button class="st-btn st-style1 st-size1 st-color1" type="submit" id="submit" name="submit">إرسال</button>
               </form>
             </div>

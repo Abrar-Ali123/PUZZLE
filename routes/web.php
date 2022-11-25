@@ -9,6 +9,8 @@ Auth::routes();
 
 
 Route::get('/', [IndexControllar::class, 'index'])->name('index');
+Route::post('/', [IndexControllar::class, 'contact'])->name('index.contact');
+
 Route::get('/categories/{category}', [WebsiteCategoryControllar::class, 'show'])->name('category');
 // Route::get('/product/{product}', [productControllar::class, 'show'])->name('product');
 
@@ -21,13 +23,11 @@ Route::resources([
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
- Route::get('/999', function () {
-    return view('auth.login');
-});
+//  Route::get('/999', function () {
+//     return view('auth.login');
+// });
  
 
 
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
