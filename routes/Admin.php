@@ -19,7 +19,7 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
     Route::Post('/settings/update/{setting}', [SettingControllar::class, 'update'])->name('settings.update');
 
     
-     Route::get('/Products/all', [ProductsControllar::class, 'get'])->name('Products.all');
+    Route::get('/Products/all', [ProductsControllar::class, 'get'])->name('Products.all');
     Route::Post('/Products/delete', [ProductsControllar::class, 'delete'])->name('Products.delete');
     Route::Post('/products/store', [ProductsControllar::class, 'store'])->name('Products.storeProduct');
 
