@@ -678,10 +678,10 @@ body.bodyChecked img.stars {
                 <div class="st-contact-info-in">
                   <h3 class="st-contact-info-title">معلومات التواصل</h3>
                   <ul>
-                    <li><i class="fas fa-map-signs"></i>111 Camino Del Rio Suite 300 San Diego</li>
-                    <li><i class="fas fa-phone"></i>+00 222- 333 -7889</li>
-                    <li><i class="fas fa-envelope"></i><a href="#">support@zambo.com</a></li>
-                    <li><i class="fas fa-globe"></i><a href="#">www.zambo.com</a></li>
+                    <li><i class="fas fa-map-signs"></i>location</li>
+                    <li><i class="fas fa-phone"></i>+966</li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:Puzzle@puzzle-sa.com">Puzzle@puzzle-sa.com</a></li>
+                    <li><i class="fas fa-globe"></i><a href="http://puzzle-sa.com">puzzle-sa.com</a></li>
                   </ul>
                 </div>
                 <div class="st-svg-animation1">
