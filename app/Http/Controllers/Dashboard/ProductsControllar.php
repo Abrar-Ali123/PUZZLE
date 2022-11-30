@@ -53,13 +53,11 @@ class ProductsControllar extends Controller
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
 
-                if(auth()->user()->can('update', $row)){
-                return $btn = '
+                 return $btn = '
                         <a href="' . Route('dashboard.Products.edit', $row->id) . '"  class="edit btn btn-success btn-sm" ><i class="fa fa-edit"></i></a>
                         <a id="deleteBtn" data-id="' . $row->id . '" class="edit btn btn-danger btn-sm"  data-toggle="modal" data-target="#deletemodal"><i class="fa fa-trash"></i></a>';
-                }else{
-                    return;
-                }
+                     return;
+                
             })
 
             ->addColumn('category_name', function ($row) {

@@ -105,8 +105,10 @@ aria-hidden="true">
                         name: 'parent'
                     },
                     {
-                        data: 'action',
-                        name: 'action',
+                        data: 'action', 
+                name: 'action', 
+                orderable: true, 
+                searchable: true
                     }
                 ]
             });
