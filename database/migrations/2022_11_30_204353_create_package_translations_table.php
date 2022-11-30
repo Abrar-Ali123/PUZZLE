@@ -13,17 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_translations', function (Blueprint $table) {
+        Schema::create('package_translations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id')->unsigned();;
+            $table->unsignedBigInteger('package_id')->unsigned();;
             $table->string('locale')->index();
             $table->string('title');
             $table->text('products');
             $table->text('smallDesc');
-            $table->unique(['product_id', 'locale']);
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-         });
-}
+            $table->unique(['package_id', 'locale']);
+            $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
+        });
+    }
+
     /**
      * Reverse the migrations.
      *
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_translations');
+        Schema::dropIfExists('package_translations');
     }
 };

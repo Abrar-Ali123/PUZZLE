@@ -4,17 +4,27 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Setting;
+use App\Models\Product;
 use Illuminate\Http\Request;
-
 use App\Http\Requests\ContactRequest;
 
 class IndexControllar extends Controller
 {
     public function index()
     {
-        $categories_with_products = Category::with(['products'])->get();
-    
-       return view('index' , compact('categories_with_products'));
+
+        $settings = Setting::checkSettings();
+        $categories = Category::with('children')->where('parent' , 0)->orWhere('parent' , null)->get();
+        $lastFiveProducts = Product::with('category','user')->orderBy('id');
+        View()->share([
+            'setting'=>$settings,
+            'categories'=>$categories,
+            'lastFiveProducts'=>$lastFiveProducts,
+        ]);
+         $categories_with_products = Category::with(['products'])->get();
+       return view('index' , compact('settings'));
+
     }
 
 
