@@ -153,7 +153,7 @@ body.bodyChecked img.stars {
 
 </head>
 
-  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="{{ asset('/js/main.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/js/wow.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/js/tamjid-counter.min.js') }}"></script>
