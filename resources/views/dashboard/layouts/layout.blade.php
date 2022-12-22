@@ -11,10 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="{{ $setting->translate(app()->getlocale())->content ?? 'None'}}">
-    <meta name="keyword" content="{{ $setting->translate(app()->getlocale())->title ?? 'None'}}">
-    <link rel="shortcut icon" href="{{ asset($setting->favicon) ?? 'None'}}">
-    <title>{{ $setting->translate(app()->getlocale())->title ?? 'None'}}</title>
+    <title>Puzzle Dashboard</title>
     <!-- Icons -->
     <link href="{{ asset('adminassets/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('adminassets/css/simple-line-icons.css') }}" rel="stylesheet">
@@ -39,8 +36,8 @@
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
            
  
-            <a href="#" style="background-image: url({{ asset($setting->logo) }});"></a>
-            <img src="{{ asset($setting->logo) }}" alt="" style="height: 70px">
+            <a href="#" style="background-image: url({{ asset("img/puzzle.png") }});"></a>
+            <img src="{{ asset("img/puzzle.png") }}" alt="" style="height: 70px">
 
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item">
