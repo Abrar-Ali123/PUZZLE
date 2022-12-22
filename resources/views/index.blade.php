@@ -17,11 +17,10 @@ input[type="checkbox"]:checked + span.circle::before, input[type="checkbox"]:che
     background-color: rgba(250, 188, 98, 0);
 }
 label.slider {
-    margin-top: 50vh;
     border: 6px solid #06121C;
     border-radius: 100px;
-    width: 128px;
-    height: 64px;
+    width: 64px;
+    height: 32px;
     position: relative;
     background-color: #06121C;
     box-sizing: content-box;
@@ -39,8 +38,8 @@ label.slider:hover {
 }
 span.circle {
     position: absolute;
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
     background-color: #FEFAF4;
     border-radius: 50%;
     top: 0;
@@ -217,6 +216,13 @@ body.bodyChecked img.stars {
                   <li><a href="#service" class="smooth-scroll">{{ __('index.Service') }}</a></li>
                   <li><a href="#portfolio" class="smooth-scroll">{{ __('index.Portfolio') }}</a></li>
                   <li><a href="#contact" class="smooth-scroll">تواصل معنا</a></li>
+                  <li>
+                  <label class="slider">
+                    <input type="checkbox" id="check">
+                    <span class="circle"></span>
+                </label>
+                </li>
+                
                   </li>
                  </ul>
          
@@ -255,10 +261,6 @@ body.bodyChecked img.stars {
         </div>
      
       </div>
-      <label class="slider">
-            <input type="checkbox" id="check">
-            <span class="circle"></span>
-        </label>
       <!-- End Hero Slider -->
       <!-- Start Icon Box -->
       <section class="st-section-top" id="service">
