@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('instagram')->unllable();
             $table->string('tiktok')->unllable();
             $table->string('snapchat')->unllable();
+            $table->string('facebook')->unllable();
+            $table->string('phone')->unllable();
+            $table->string('email')->unllable();
 
             
 

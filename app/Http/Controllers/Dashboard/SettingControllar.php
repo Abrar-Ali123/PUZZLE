@@ -16,7 +16,9 @@ class SettingControllar extends Controller
 
     public function index()
     {
-          return view('dashboard.settings');
+          $setting = Setting::checkSettings();
+
+          return view('dashboard.settings', compact('setting'));
     }
 
     public function update(SettingRequest $request, Setting $setting)
