@@ -21,7 +21,8 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
     
     Route::get('/Products/all', [ProductsControllar::class, 'get'])->name('Products.all');
     Route::Post('/Products/delete', [ProductsControllar::class, 'delete'])->name('Products.delete');
-    Route::Post('/products/store', [ProductsControllar::class, 'store'])->name('Products.storeProduct');
+    Route::Post('/Products/store', [ProductsControllar::class, 'store'])->name('Products.storeProduct');
+    Route::Post('/Products/update/{Product}', [ProductsControllar::class, 'update'])->name('Products.updatePr');
 
 
     
@@ -42,5 +43,6 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
         'users' => UserController::class,
         'category' => CategoryControllar::class,
         'Products' => ProductsControllar::class,
+
      ]);
 });

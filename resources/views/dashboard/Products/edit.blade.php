@@ -22,9 +22,8 @@
     <div class="container-fluid">
 
         <div class="animated fadeIn">
-            <form action="{{ Route('dashboard.Products.update' , $Product) }}" method="Product" enctype="multipart/form-data">
+            <form action="{{ Route('dashboard.Products.updatePr' , $Product) }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
                 <div class="row">
                     @if ($errors->any())
                         <div class="alert alert-danger">
