@@ -29,7 +29,7 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('dashboard.Products.create') }}"><i
-                                class="icon-user-follow"></i>{{ __('dashboard.add Prpduct') }}</a>
+                                class="icon-user-follow"></i>{{ __('dashboard.add Product') }}</a>
                         <a class="nav-link" href="{{ route('dashboard.Products.index') }}"><i
                                 class="icon-people"></i>
                             {{ __('dashboard.Products') }}</a>

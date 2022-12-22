@@ -8,7 +8,7 @@ return [
     'user settings' => 'user settings',
     'logout' => 'logout',
     'Products' => 'Products',
-    'add Prpduct' => 'add Prpduct',
+    'add Product' => 'add Product',
     'users' => 'users',
     'add user' => 'add user',
     'categories' => 'categories',
