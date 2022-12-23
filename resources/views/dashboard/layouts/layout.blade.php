@@ -36,8 +36,8 @@
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
            
  
-            <a href="#" style="background-image: url({{ asset("img/puzzle.png") }});"></a>
-            <img src="{{ asset("img/puzzle.png") }}" alt="" style="height: 70px">
+            {{-- <a href="#" style="background-image: url({{ asset("img/puzzle.png") }});"></a>
+            <img src="{{ asset("img/puzzle.png") }}" alt="" style="height: 70px"> --}}
 
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item">
