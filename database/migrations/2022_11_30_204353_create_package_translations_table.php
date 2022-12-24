@@ -18,8 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('package_id')->unsigned();;
             $table->string('locale')->index();
             $table->string('title');
-            $table->text('products');
-            $table->text('smallDesc');
+            $table->text('details');
             $table->unique(['package_id', 'locale']);
             $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
         });

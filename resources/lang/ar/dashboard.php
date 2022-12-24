@@ -13,7 +13,10 @@ return [
     'add user' => 'add user',
     'categories' => 'categories',
     'add category' => 'add category',
-     
+    'Packages' => 'Packages',
+    'add Package' => 'Add Package',
+
+
     'image' => 'image',
     'status' => 'status',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',

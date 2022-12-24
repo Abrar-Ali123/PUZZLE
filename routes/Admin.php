@@ -36,6 +36,8 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
     Route::Post('/users/delete', [UserController::class, 'delete'])->name('users.delete');
 
 
+    Route::get('Packages/all', [PackagesControllar::class, 'get'])->name('Packages.all');
+    Route::get('Packages/delete', [PackagesControllar::class, 'create'])->name('Packages.delete');
 
 
 
@@ -43,6 +45,7 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
         'users' => UserController::class,
         'category' => CategoryControllar::class,
         'Products' => ProductsControllar::class,
+        'Packages' => PackagesControllar::class,
 
      ]);
 });

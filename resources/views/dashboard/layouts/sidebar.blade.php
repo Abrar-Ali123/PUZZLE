@@ -37,6 +37,20 @@
                 </ul>
             </li>
 
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i>
+                    {{ __('dashboard.Packages') }}</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard.Packages.create') }}"><i
+                                class="icon-user-follow"></i>{{ __('dashboard.add Package') }}</a>
+                        <a class="nav-link" href="{{ route('dashboard.Packages.index') }}"><i
+                                class="icon-people"></i>
+                            {{ __('dashboard.Packages') }}</a>
+                    </li>
+                </ul>
+            </li>
+
 
                  <li class="nav-item nav-dropdown">
                     <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i>
