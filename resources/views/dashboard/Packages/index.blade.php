@@ -32,8 +32,8 @@
                     <table class="table table-striped" id="table_id">
                         <thead>
                             <tr>
-                                <th>Category</th>
-                                <th>Parent</th>
+                                <th>title</th>
+                                <th>price</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -94,7 +94,7 @@ aria-hidden="true">
             var table = $('#table_id').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ Route('dashboard.Products.all') }}",
+                ajax: "{{ Route('dashboard.Packages.all') }}",
                 columns: [
                  
                     {
@@ -102,8 +102,8 @@ aria-hidden="true">
                         name: 'title'
                     },
                     {
-                        data: 'category_name',
-                        name: 'category_name'
+                        data: 'price',
+                        name: 'price'
                     },
                     {
                         data: 'action',

@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Dashboard\CategoryControllar;
 use App\Http\Controllers\Dashboard\ProductsControllar;
+use App\Http\Controllers\Dashboard\PackagesControllar;
 use App\Http\Controllers\Dashboard\SettingControllar;
 use App\Http\Controllers\Dashboard\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,7 +38,9 @@ Route::group(['prefix' => 'dashboard' , 'as' => 'dashboard.', 'middleware' => ['
 
 
     Route::get('Packages/all', [PackagesControllar::class, 'get'])->name('Packages.all');
-    Route::get('Packages/delete', [PackagesControllar::class, 'create'])->name('Packages.delete');
+    Route::post('Packages/delete', [PackagesControllar::class, 'delete'])->name('Packages.delete');
+    Route::Post('Packages/store', [PackagesControllar::class, 'store'])->name('Packages.storeProduct');
+    Route::Post('Packages/update/{Package}', [PackagesControllar::class, 'update'])->name('Packages.updatePk');
 
 
 

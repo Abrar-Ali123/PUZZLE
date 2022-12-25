@@ -14,7 +14,12 @@ class Package extends Model implements TranslatableContract
     use HasFactory, Translatable, SoftDeletes;
 
     public $translatedAttributes = ['title', 'details'];
-    protected $fillable = ['image','price','product_id', 'category_id'];
+    protected $fillable = ['image','price'];
 
 
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'package_products');
+    }
+    
 }

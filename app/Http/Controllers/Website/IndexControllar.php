@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Setting;
 use App\Models\Product;
+use App\Models\Package;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 
@@ -17,10 +19,15 @@ class IndexControllar extends Controller
         $settings = Setting::checkSettings();
         $categories = Category::with('children')->where('parent' , 0)->orWhere('parent' , null)->get();
         $lastFiveProducts = Product::with('category','user')->orderBy('id');
+
+        $packages = Package::with('products')->limit(3)->get();
+
+
         View()->share([
             'setting'=>$settings,
             'categories'=>$categories,
             'lastFiveProducts'=>$lastFiveProducts,
+            'packages' => $packages,
         ]);
          $categories_with_products = Category::with(['products'])->get();
        return view('index' , compact('settings'));

@@ -36,7 +36,7 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <strong>{{ __('words.users') }}</strong>
+                            <strong>{{ __('dashboard.Products') }}</strong>
                         </div>
                         <div class="card-block">
 

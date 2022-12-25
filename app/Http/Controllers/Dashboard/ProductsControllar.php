@@ -83,9 +83,9 @@ class ProductsControllar extends Controller
     public function create(Request $request)
     {
          $categories = Category::all();
-     {
+     
             return view('dashboard.products.add' , compact('categories'));
-        }
+        
         
     }
     public function store(ProductRequest $request, Product $product)

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductRequest extends FormRequest
+class PackageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,16 +21,13 @@ class ProductRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    
-
     public function rules()
     {
-
         foreach (config('app.languages') as $key => $value) {
-            $data[$key . '.title'] = 'nullable|string|required';
-            $data[$key . '.content'] = 'nullable|string|required';
-            $data[$key . '.smallDesc'] = 'nullable|string|required';
+            $data[$key . '.title'] = 'string|required';
+            $data[$key . '.details'] = 'string|required';
         }
         return $data;
+
     }
 }

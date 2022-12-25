@@ -17,12 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->Integer('price')->unsigned();
-            $table->unsignedBigInteger('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->unsignedBigInteger('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

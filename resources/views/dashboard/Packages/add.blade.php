@@ -22,9 +22,8 @@
     <div class="container-fluid">
 
         <div class="animated fadeIn">
-            <form action="{{ Route('dashboard.Products.storeProduct') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ Route('dashboard.Packages.storeProduct') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                @method('post')
                 <div class="row">
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -37,7 +36,7 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <strong>{{ __('dashboard.Products') }}</strong>
+                            <strong>{{ __('dashboard.Packages') }}</strong>
                         </div>
                         <div class="card-block">
 
@@ -53,14 +52,22 @@
 
 
                             <div class="form-group col-md-12">
-                                <label>{{ __('dashboard.status') }}</label>
-                                <select name="category_id" id="" class="form-control" required>
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                <label>{{ __('dashboard.Products') }}</label>
+                                <select name="products[]" id="" class="form-control" required multiple>
+                                    @foreach ($products as $product)
+                                        <option value="{{ $product->id }}">{{ $product->title }}</option>
                                     @endforeach
                                 </select>
 
                             </div>
+
+
+                            <div class="form-group mt-3 col-md-12">
+                                <label>{{ __('dashboard.price') }} </label>
+                                <input type="number" name="price" class="form-control"
+                                    placeholder="{{ __('dashboard.price') }}">
+                            </div>
+
                         </div>
 
 
@@ -93,23 +100,13 @@
                                                 <input type="text" name="{{ $key }}[title]" class="form-control"
                                                     placeholder="{{ __('dashboard.title') }}">
                                             </div>
-
+                                
                                             <div class="form-group col-md-12">
-                                                <label>{{ __('dashboard.smallDesc') }}</label>
-                                                <textarea name="{{ $key }}[smallDesc]" class="form-control" id="editor" cols="50" rows="10"></textarea>
-                                            </div>
-
-
-                                            <div class="form-group col-md-12">
-                                                <label>{{ __('dashboard.content') }}</label>
-                                                <textarea name="{{ $key }}[content]" class="form-control" id="editor" cols="50" rows="10"></textarea>
+                                                <label>{{ __('dashboard.details') }}</label>
+                                                <textarea name="{{ $key }}[details]" class="form-control" id="editor" cols="50" rows="10"></textarea>
                                             </div>
                                             
 
-                                            <div class="form-group col-md-12">
-                                                <label>{{ __('dashboard.tags') }}</label>
-                                                <textarea name="{{ $key }}[tags]" class="form-control" id="" ></textarea>
-                                            </div>
                                         </div>
                                     @endforeach
                                 </div>

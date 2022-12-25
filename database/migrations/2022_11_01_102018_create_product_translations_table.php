@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('products');
             $table->text('smallDesc');
+            $table->text('content');
             $table->unique(['product_id', 'locale']);
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
          });

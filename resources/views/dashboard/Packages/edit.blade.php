@@ -3,17 +3,17 @@
 @section('body')
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">{{ __('dashboard.dashboard') }} </li>
-        <li class="breadcrumb-item"><a href="#">{{ __('dashboard.categories') }}</a>
+        <li class="breadcrumb-item">{{ __('words.dashboard') }}</li>
+        <li class="breadcrumb-item"><a href="#">{{ __('words.categories') }}</a>
         </li>
-        <li class="breadcrumb-item active">{{ __('dashboard.add product') }}</li>
+        <li class="breadcrumb-item active">{{ __('words.add user') }}</li>
 
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu">
             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                 <a class="btn btn-secondary" href="#"><i class="icon-speech"></i></a>
-                <a class="btn btn-secondary" href="./"><i class="icon-graph"></i> &nbsp;{{ __('dashboard.categories') }}</a>
-                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;{{ __('dashboard.add product') }}</a>
+                <a class="btn btn-secondary" href="./"><i class="icon-graph"></i> &nbsp;{{ __('words.categories') }}</a>
+                <a class="btn btn-secondary" href="#"><i class="icon-settings"></i> &nbsp;{{ __('words.add user') }}</a>
             </div>
         </li>
     </ol>
@@ -22,9 +22,8 @@
     <div class="container-fluid">
 
         <div class="animated fadeIn">
-            <form action="{{ Route('dashboard.Products.storeProduct') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ Route('dashboard.Packages.updatePk' , $Package) }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('post')
                 <div class="row">
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -37,7 +36,7 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <strong>{{ __('dashboard.Products') }}</strong>
+                            <strong>{{ __('dashboard.Packages') }}</strong>
                         </div>
                         <div class="card-block">
 
@@ -45,22 +44,34 @@
 
 
                             <div class="form-group col-md-12">
-                                <label>{{ __('dashboard.image') }}</label>
+                               <img src="{{asset($Package->image)}}" alt="" style="height: 50px">
+                            </div>
+
+
+                            <div class="form-group col-md-12">
+                                <label>{{ __('words.image') }}</label>
                                 <input type="file" name="image" class="form-control"
-                                    placeholder="{{ __('dashboard.image') }}">
+                                    placeholder="{{ __('words.image') }}">
                             </div>
 
 
 
                             <div class="form-group col-md-12">
-                                <label>{{ __('dashboard.status') }}</label>
-                                <select name="category_id" id="" class="form-control" required>
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                <label>{{ __('dashboard.Products') }}</label>
+                                <select name="products[]" id="" class="form-control" required multiple>
+                                    @foreach ($products as $product)
+                                        <option  @selected($Package->products->contains($product->id)) value="{{ $product->id }}">{{ $product->title }}</option>
                                     @endforeach
                                 </select>
 
                             </div>
+
+                            <div class="form-group mt-3 col-md-12">
+                                <label>{{ __('dashboard.price') }} </label>
+                                <input type="number" name="price" class="form-control"
+                                    placeholder="{{ __('dashboard.price') }}" value="{{$Package->price}}">
+                            </div>
+
                         </div>
 
 
@@ -69,7 +80,7 @@
 
                         <div class="card">
                             <div class="card-header">
-                                <strong>{{ __('dashboard.translations') }}</strong>
+                                <strong>{{ __('words.translations') }}</strong>
                             </div>
                             <div class="card-block">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -89,27 +100,16 @@
                                             id="{{ $key }}" role="tabpanel" aria-labelledby="home-tab">
                                             <br>
                                             <div class="form-group mt-3 col-md-12">
-                                                <label>{{ __('dashboard.title') }} - {{ $lang }}</label>
+                                                <label>{{ __('words.title') }} - {{ $lang }}</label>
                                                 <input type="text" name="{{ $key }}[title]" class="form-control"
-                                                    placeholder="{{ __('dashboard.title') }}">
+                                                    placeholder="{{ __('words.title') }}" value="{{$Package->translate($key)->title}}">
                                             </div>
 
                                             <div class="form-group col-md-12">
-                                                <label>{{ __('dashboard.smallDesc') }}</label>
-                                                <textarea name="{{ $key }}[smallDesc]" class="form-control" id="editor" cols="50" rows="10"></textarea>
-                                            </div>
-
-
-                                            <div class="form-group col-md-12">
-                                                <label>{{ __('dashboard.content') }}</label>
-                                                <textarea name="{{ $key }}[content]" class="form-control" id="editor" cols="50" rows="10"></textarea>
+                                                <label>{{ __('dashboard.details') }}</label>
+                                                <textarea name="{{ $key }}[details]" class="form-control" id="editor" cols="50" rows="10">{{$Package->translate($key)->details}}</textarea>
                                             </div>
                                             
-
-                                            <div class="form-group col-md-12">
-                                                <label>{{ __('dashboard.tags') }}</label>
-                                                <textarea name="{{ $key }}[tags]" class="form-control" id="" ></textarea>
-                                            </div>
                                         </div>
                                     @endforeach
                                 </div>

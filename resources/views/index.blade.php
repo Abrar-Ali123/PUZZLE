@@ -572,65 +572,30 @@ body.bodyChecked img.stars {
       </div>
       <div class="container">
         <div class="row">
+          @foreach($packages as $pack)
           <div class="col-lg-4">
             <div class="st-price-card text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-              <div class="st-price-card-img"><img src="assets/img/light-img/price-img1.png" alt="demo"></div>
-              <h3 class="st-price-card-title">Economy</h3>
+              <div class="st-price-card-img"><img src="{{ asset($pack->image) }}" alt="{{$pack->title}}"></div>
+              <h3 class="st-price-card-title">{{$pack->title}}</h3>
               <div class="st-price">
-                <h3>19</h3>
+                <h3 class="mb-2">ريال {{$pack->price}}</h3>
                 
 
                 <span>per month</span>
               </div>
               <ul class="st-price-card-feature st-mp0">
-                <li>Free Suppport 24/7</li>
-                <li>Databases Download</li>
-                <li>Maintenance Email</li>
-                <li>Unlimited Traffic</li>
+                @foreach($pack->products as $pr)
+
+                <li>{{$pr->title}}</li>
+                @endforeach
               </ul>
-              <div class="st-price-card-btn">
+              {{-- <div class="st-price-card-btn">
                 <a href="#" class="st-btn st-style1 st-size1 st-color1">Start The Plan</a>
-              </div>
+              </div> --}}
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="st-price-card text-center st-featured-price wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-              <div class="st-price-card-img"><img src="assets/img/light-img/price-img2.png" alt="demo"></div>
-              <h3 class="st-price-card-title">Deluxe</h3>
-              <div class="st-price">
-                <h3>$29</h3>
-                <span>per month</span>
-              </div>
-              <ul class="st-price-card-feature st-mp0">
-                <li>Free Suppport 24/7</li>
-                <li>Databases Download</li>
-                <li>Maintenance Email</li>
-                <li>Unlimited Traffic</li>
-              </ul>
-              <div class="st-price-card-btn">
-                <a href="#" class="st-btn st-style1 st-size1 st-color2">Start The Plan</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="st-price-card text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-              <div class="st-price-card-img"><img src="assets/img/light-img/price-img3.png" alt="demo"></div>
-              <h3 class="st-price-card-title">Ultimate</h3>
-              <div class="st-price">
-                <h3>$49</h3>
-                <span>per month</span>
-              </div>
-              <ul class="st-price-card-feature st-mp0">
-                <li>Free Suppport 24/7</li>
-                <li>Databases Download</li>
-                <li>Maintenance Email</li>
-                <li>Unlimited Traffic</li>
-              </ul>
-              <div class="st-price-card-btn">
-                <a href="#" class="st-btn st-style1 st-size1 st-color1">Start The Plan</a>
-              </div>
-            </div>
-          </div>
+          @endforeach
+      
         </div>
       </div>
     </section>

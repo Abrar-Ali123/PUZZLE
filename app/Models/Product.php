@@ -25,4 +25,9 @@ class Product extends Model implements TranslatableContract
     {
        return $this->belongsTo(User::class , 'user_id');
     }
+
+    public function packages()
+    {
+        return $this->belongsToMany(Package::class, 'package_products');
+    }
 }
