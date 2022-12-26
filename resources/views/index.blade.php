@@ -379,156 +379,6 @@ body.bodyChecked img.stars {
 
       <!-- End Service Section -->
   
-      {{-- <!-- Start Fun Fact Section -->
-      <div class="st-funfact-wrap st-section-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-sm-6">
-              <div class="st-funfact text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                <div class="st-funfact-icon"><i class="flaticon-rate"></i></div>
-                <h2 class="st-funfact-number st-counter">999</h2>
-                <h3 class="st-funfact-title">Satisfied customers</h3>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="st-funfact text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.25s">
-                <div class="st-funfact-icon"><i class="flaticon-code"></i></div>
-                <h2 class="st-funfact-number st-counter">185</h2>
-                <h3 class="st-funfact-title">Built websites</h3>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="st-funfact text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                <div class="st-funfact-icon"><i class="flaticon-laptop"></i></div>
-                <h2 class="st-funfact-number st-counter">100</h2>
-                <h3 class="st-funfact-title">Experts Worker</h3>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="st-funfact text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.35s">
-                <div class="st-funfact-icon"><i class="flaticon-win"></i></div>
-                <h2 class="st-funfact-number st-counter">200</h2>
-                <h3 class="st-funfact-title">Experience Years</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Fun Fact Section --> --}}
-  
-      <!-- Start Project Section -->
-      {{-- <div class="st-project-wrap st-section-top" id="portfolio">
-        <div class="container">
-          <div class="st-section-heading st-style2 text-center">
-            <h2>Our Latest Project</h2>
-            <div class="st-seperator">
-              <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-              <img src="img/dark-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
-              <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-            </div>
-            <p>This is a great place to tell people more about your services and peak <br>their interest. Last year our latest work album</p>
-          </div>
-        </div>
-        <div class="st-project st-project-carousel owl-carousel st-style1 st-owl-controler1">
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" data-src="img/light-img/project1.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s" data-src="img/light-img/project2.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" data-src="img/light-img/project3.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s" data-src="img/light-img/project4.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" data-src="img/light-img/project1.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s" data-src="img/light-img/project2.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" data-src="img/light-img/project3.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s" data-src="img/light-img/project4.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" data-src="img/light-img/project1.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s" data-src="img/light-img/project2.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" data-src="img/light-img/project3.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s" data-src="img/light-img/project4.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s" data-src="img/light-img/project1.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.25s" data-src="img/light-img/project2.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.3s" data-src="img/light-img/project3.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-          <a href="#" class="st-single-project st-bg wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.35s" data-src="img/light-img/project4.jpg">
-            <div class="st-project-meta">
-              <h3>Project Title One</h3>
-              <span>Branding</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- End Project Section --> --}}
   
       <!-- Start CTA Section -->
       <section class="st-cta-wrap st-gray-bg mt-3">
@@ -561,13 +411,13 @@ body.bodyChecked img.stars {
     <section class="st-pricing-wrap st-section" id="price">
       <div class="container">
         <div class="st-section-heading st-style2 text-center">
-          <h2>Pricing Plan</h2>
+          <h2>البكجات</h2>
           <div class="st-seperator">
             <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
             <img src="assets/img/light-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
             <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
           </div>
-          <p>Pricing strategy in which the selling price is determined by adding a specific <br>amount markup to a product's unit cost.</p>
+          <p>بكجات حصرية بخدمات مناسبة وأسعار تنافسيه</p>
         </div>
       </div>
       <div class="container">
@@ -577,11 +427,12 @@ body.bodyChecked img.stars {
             <div class="st-price-card text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
               <div class="st-price-card-img"><img src="{{ asset($pack->image) }}" alt="{{$pack->title}}"></div>
               <h3 class="st-price-card-title">{{$pack->title}}</h3>
+
               <div class="st-price">
                 <h3 class="mb-2">ريال {{$pack->price}}</h3>
                 
 
-                <span>per month</span>
+                <span class="mt-4">{!! $pack->details !!}</span>
               </div>
               <ul class="st-price-card-feature st-mp0">
                 @foreach($pack->products as $pr)
