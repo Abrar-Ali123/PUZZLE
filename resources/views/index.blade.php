@@ -151,18 +151,7 @@ body.bodyChecked img.stars {
 
 
 </head>
-
-  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script type="text/javascript" src="{{ asset('/js/main.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('/js/wow.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('/js/tamjid-counter.min.js') }}"></script>
-  <script type="text/javascript"  src="{{ asset('/js/owlCarousel.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('/js/mailchimp.min.js') }}"></script>
-  <script  type="text/javascript" src="{{ asset('/js/vendor/jquery-1.12.4.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('/js/vendor/modernizr-3.5.0.min.js') }}"></script>
-
-
-  <body >
+  <body>
 
 
     <div id="st-preloader">
@@ -211,11 +200,10 @@ body.bodyChecked img.stars {
 
                   
         <li><a href="#Home" class="slider">{{ __('index.Home') }}</a></li>
-                  <li><a href="#Home" class="smooth-scroll">{{ __('index.Home') }}</a></li>
                   <li><a href="#about" class="smooth-scroll">{{ __('index.About') }}</a></li>
                   <li><a href="#service" class="smooth-scroll">{{ __('index.Service') }}</a></li>
                   <li><a href="#portfolio" class="smooth-scroll">{{ __('index.Portfolio') }}</a></li>
-                  <li><a href="#contact" class="smooth-scroll">تواصل معنا</a></li>
+                  <li><a href="#contact" class="smooth-scroll">{{ __('index.contact') }}</a></li>
                   <li>
                   <label class="slider">
                     <input type="checkbox" id="check">
@@ -271,9 +259,9 @@ body.bodyChecked img.stars {
                 <div class="st-iconbox-icon">
                   <i class="flaticon-focus"></i>
                 </div>
-                <h3 class="st-iconbox-title">إنطلاقة مواكبة</h3>
+                <h3 class="st-iconbox-title">{{ __('index.go') }}</h3>
                 <div class="st-iconbox-text">
-                  نبتكر الحلول البرمجية لكي نمكن شركاءنا في زيادة إنتاجيتهم وكفاءاتهم، سعيًا منا لمواكبة التطور التكنولوجي في هذا العصر، وموافقةً مع استراتيجية ورؤية المملكة في التحول الرقمي والابتكار.
+                  {{ __('index.go.des') }}
                 </div>
               </div>
             </div>
@@ -282,10 +270,10 @@ body.bodyChecked img.stars {
                 <div class="st-iconbox-icon">
                   <i class="flaticon-career"></i>
                 </div>
-                <h3 class="st-iconbox-title">المنافسة والريادة</h3>
+                <h3 class="st-iconbox-title">{{ __('index.go2') }}</h3>
                 <div class="st-iconbox-text">
-                  نخوض كل مشروع جديد وكأنه تحدي مع النفس، لنشجع أنفسنا على تقديم الأفضل والأفضل
-                </div>
+                  {{ __('index.go2.des') }}
+                   </div>
               </div>
             </div>
             <div class="col-lg-4">
@@ -293,9 +281,9 @@ body.bodyChecked img.stars {
                 <div class="st-iconbox-icon">
                   <i class="flaticon-career-1"></i>
                 </div>
-                <h3 class="st-iconbox-title">الشراكة الإستراتيجية</h3>
+                <h3 class="st-iconbox-title">{{ __('index.go3') }}</h3>
                 <div class="st-iconbox-text">
-                  نهدف إلى أن نكون الشريك المفضل في مجالات تقنية المعلومات والابتكار وفي تطبيق التحول الرقمي
+                  {{ __('index.go3.des') }}
                 </div>
               </div>
             </div>
@@ -318,20 +306,20 @@ body.bodyChecked img.stars {
             </div>
             <div class="col-lg-6">
               <div class="st-section-heading st-style1">
-                <h3>من نحن</h3>
-                <h2>فريق تقني من الكفاءات العالية مختصون 
-                       </h2>
+                <h3>{{ __('index.us?') }}</h3>
+                <h2>@lang('index.us.des')</h2>
               </div>
               <div class="st-about-text">
-                <p>نـسعـى في بـزل لتـقنيـة المعلومـات لإلرتقـاء بمستـوى
-                  المشاريع التقنية وغيرها من خالل الخدمات التي نقدمها</p>
+                <p>
+                  @lang('index.about.text')
+                </p>
                 <ul class="tr-list">
-                  <li>برمجة وتطوير تطبيقات الجوال</li>
-                  <li>برمجة وتصميم مواقع الويب</li>
-                  <li>موشن جرافيك</li>
-                  <li>صنع الهويات البصرية</li>
+                  <li>@lang('index.about.service1')</li>
+                  <li>@lang('index.about.service2')</li>
+                  <li>@lang('index.about.service3')</li>
+                  <li>@lang('index.about.service4')</li>
                 </ul>
-                <a href="#" class="st-btn st-style1 st-size1 st-color2">اطلب الخدمات الآن</a>
+                <a href="#" class="st-btn st-style1 st-size1 st-color2">@lang('index.orderService')</a>
               </div>
             </div>
           </div>
@@ -386,10 +374,10 @@ body.bodyChecked img.stars {
           <div class="row">
             <div class="col-lg-7 offset-lg-1">
               <div class="st-cta text-center st-section">
-                <h2 class="st-cta-title">هل تبحث عن شريك؟</h2>
-                <div class="st-cta-text">بزل هو شريكك لإكمال قطعتك الناقصة</div>
+                <h2 class="st-cta-title">@lang('index.lookingFor')</h2>
+                <div class="st-cta-text">@lang('index.lookingFor.text')</div>
                 <div class="st-cta-btn">
-                  <a href="mailto:test@test.com" class="st-btn st-style1 st-size1 st-color1">أبدع معنا الآن</a>
+                  <a href="mailto:test@test.com" class="st-btn st-style1 st-size1 st-color1">@lang('index.lookingFor.button')</a>
                 </div>
               </div>
             </div>
@@ -411,13 +399,13 @@ body.bodyChecked img.stars {
     <section class="st-pricing-wrap st-section" id="price">
       <div class="container">
         <div class="st-section-heading st-style2 text-center">
-          <h2>البكجات</h2>
+          <h2>@lang('index.packages')</h2>
           <div class="st-seperator">
             <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
             <img src="assets/img/light-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
             <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
           </div>
-          <p>بكجات حصرية بخدمات مناسبة وأسعار تنافسيه</p>
+          <p>@lang('index.packages.text')</p>
         </div>
       </div>
       <div class="container">
@@ -429,7 +417,7 @@ body.bodyChecked img.stars {
               <h3 class="st-price-card-title">{{$pack->title}}</h3>
 
               <div class="st-price">
-                <h3 class="mb-2">ريال {{$pack->price}}</h3>
+                <h3 class="mb-2">@lang('index.SR') {{$pack->price}}</h3>
                 
 
                 <span class="mt-4">{!! $pack->details !!}</span>
@@ -456,16 +444,14 @@ body.bodyChecked img.stars {
       <section class="st-contact-wrap st-gray-bg st-section" id="contact">
         <div class="container">
           <div class="st-section-heading st-style2 text-center">
-            <h2>تواصل معنا</h2>
+            <h2>@lang('index.contact')</h2>
             <div class="st-seperator">
               <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
               <img src="img/dark-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
               <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
             </div>
             <p>
-              نتطلع للشراكة معك،
-              <br>
-              ونسعد بتواصلك معنا
+              {!! __('index.contact.des') !!}
             </p>
           </div>
         </div>
@@ -484,17 +470,17 @@ body.bodyChecked img.stars {
               @endif
               <form action="{{route('index.contact')}}" method="post" class="st-contact-form">
                 @csrf
-                <input type="text" placeholder="الاسم الكامل" id="name" name="name" required>
-                <input type="text" placeholder="البريد الإلكتروني" id="email" name="email" required>
-                <input type="text" placeholder="الموضوع" id="subject" name="subject" required>
-                <textarea cols="30" rows="10" placeholder="الرسالة" id="msg" name="msg" required></textarea>
-                <button class="st-btn st-style1 st-size1 st-color1" type="submit" id="submit" name="submit">إرسال</button>
+                <input type="text" placeholder="@lang('index.form.name')" id="name" name="name" required>
+                <input type="text" placeholder="@lang('index.form.email')" id="email" name="email" required>
+                <input type="text" placeholder="@lang('index.form.subject')" id="subject" name="subject" required>
+                <textarea cols="30" rows="10" placeholder="@lang('index.form.msg')" id="msg" name="msg" required></textarea>
+                <button class="st-btn st-style1 st-size1 st-color1" type="submit" id="submit" name="submit">@lang('index.form.button')</button>
               </form>
             </div>
             <div class="col-lg-6">
               <div class="st-contact-info st-style1">
                 <div class="st-contact-info-in">
-                  <h3 class="st-contact-info-title">معلومات التواصل</h3>
+                  <h3 class="st-contact-info-title">@lang('index.contact.info')</h3>
                   <ul>
                     <li><i class="fas fa-map-signs"></i>location</li>
                     <li><i class="fas fa-phone"></i>+966</li>
@@ -589,6 +575,16 @@ body.bodyChecked img.stars {
     </div>
     <!-- End Video Popup -->
     <!-- Scripts -->
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="{{ asset('/js/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/wow.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/tamjid-counter.min.js') }}"></script>
+    <script type="text/javascript"  src="{{ asset('/js/owlCarousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/mailchimp.min.js') }}"></script>
+    <script  type="text/javascript" src="{{ asset('/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+  
     <script>
 $(document).ready(function(){
 

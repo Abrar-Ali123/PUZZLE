@@ -2,23 +2,21 @@
 
 return [
 
-    'dashboard' => 'dashboard',
-    'categories' => 'categories',
-    'settings' => 'settings',
-    'user settings' => 'user settings',
-    'logout' => 'logout',
-    'Products' => 'Products',
-    'add Product' => 'add Product',
-    'users' => 'users',
-    'add user' => 'add user',
-    'categories' => 'categories',
-    'add category' => 'add category',
-    'Packages' => 'Packages',
-    'add Package' => 'Add Package',
+    'dashboard' => 'لوحة التحكم',
+    'categories' => 'الفئات',
+    'settings' => 'الاعدادات',
+    'user settings' => 'اعدادات المستخدم',
+    'logout' => 'تسجيل الخروج',
+    'Products' => 'المنتجات',
+    'add Product' => 'إضافة منتج',
+    'users' => 'المستخدمين',
+    'add user' => 'إضافة مستخدم',
+    'add category' => 'إضافة فئة',
+    'Packages' => 'البكجات',
+    'add Package' => 'إضافة بكج',
 
 
-    'image' => 'image',
-    'status' => 'status',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'image' => 'صورة',
+    'status' => 'فئة',
 
 ];
