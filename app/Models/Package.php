@@ -14,7 +14,7 @@ class Package extends Model implements TranslatableContract
     use HasFactory, Translatable, SoftDeletes;
 
     public $translatedAttributes = ['title', 'details'];
-    protected $fillable = ['image','price'];
+    protected $fillable = ['image','price', 'deleted_at'];
 
 
     public function products()
