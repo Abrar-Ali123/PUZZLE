@@ -417,7 +417,7 @@ body.bodyChecked img.stars {
               <h3 class="st-price-card-title">{{$pack->title}}</h3>
 
               <div class="st-price">
-                <h3 class="mb-2">@lang('index.SR') {{$pack->price}}</h3>
+                <h5 class="mb-2">@lang('index.SR') {{$pack->price}}</h5>
                 
 
                 <span class="mt-4">{!! $pack->details !!}</span>
