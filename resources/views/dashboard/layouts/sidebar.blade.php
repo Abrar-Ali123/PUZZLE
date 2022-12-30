@@ -28,7 +28,7 @@
                     {{ __('dashboard.Products') }}</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard.products.create') }}"><i
+                        <a class="nav-link" href="{{ route('dashboard.Products.create') }}"><i
                                 class="icon-user-follow"></i>{{ __('dashboard.add Product') }}</a>
                         <a class="nav-link" href="{{ route('dashboard.Products.index') }}"><i
                                 class="icon-people"></i>
@@ -42,7 +42,7 @@
                     {{ __('dashboard.Packages') }}</a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard.packages.create') }}"><i
+                        <a class="nav-link" href="{{ route('dashboard.Packages.create') }}"><i
                                 class="icon-user-follow"></i>{{ __('dashboard.add Package') }}</a>
                         <a class="nav-link" href="{{ route('dashboard.Packages.index') }}"><i
                                 class="icon-people"></i>

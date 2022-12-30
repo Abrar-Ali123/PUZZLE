@@ -84,7 +84,7 @@ class ProductsControllar extends Controller
     {
          $categories = Category::all();
      
-            return view('dashboard.products.add' , compact('categories'));
+            return view('dashboard.Products.add' , compact('categories'));
         
         
     }

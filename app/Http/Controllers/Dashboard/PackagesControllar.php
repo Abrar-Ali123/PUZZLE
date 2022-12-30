@@ -30,7 +30,7 @@ class PackagesControllar extends Controller
     public function create(Request $request)
     {
         $products = Product::all();
-        return view('dashboard.packages.add' , compact('products'));
+        return view('dashboard.Packages.add' , compact('products'));
     }
 
 
