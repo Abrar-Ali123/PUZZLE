@@ -402,7 +402,7 @@ body.bodyChecked img.stars {
           <h2>@lang('index.packages')</h2>
           <div class="st-seperator">
             <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s"></div>
-            <img src="assets/img/light-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
+            <img src="img/dark-img/seperator-icon.png" alt="seperator" class="st-seperator-icon">
             <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s"></div>
           </div>
           <p>@lang('index.packages.text')</p>
