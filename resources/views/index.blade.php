@@ -167,7 +167,7 @@ body.bodyChecked img.stars {
           <div class="st-main-header-in">
             <div class="st-site-branding">
               
-              <a href="#" class="st-logo-link"><img src="{{ asset($setting->logo) }}" alt="logo"></a>
+  <a href="#" class="st-logo-link"><img src="{{ asset($setting->logo) }}" alt="logo"  style="width:60px;height:60px;"></a>
             </div>
             <!-- For Site Title -->
             <!-- <span class="st-site-title">
@@ -214,7 +214,7 @@ body.bodyChecked img.stars {
                   </li>
                  </ul>
          
-        
+
                 </nav><!-- .st-nav -->
               </div><!-- .st-nav-wrap -->
           </div>
