@@ -292,7 +292,7 @@ body.bodyChecked img.stars {
       </section>
       <!-- End Icon Box -->
   
-      <!-- Start About Section -->
+      <!-- Start About Section 
 
       <div class="st-about-wrap st-section-top mb-3" id="about">
         <div class="container">
@@ -325,7 +325,7 @@ body.bodyChecked img.stars {
           </div>
         </div>
       </div>
-
+      -->
 
       <!-- End About Section -->
   
