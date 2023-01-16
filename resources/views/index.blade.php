@@ -245,7 +245,7 @@ body.bodyChecked img.stars {
               </div>
             </div>
             </div>
-          <div class="st-hero-img"><img src="https://limty-html.netlify.app/limty/assets/img/light-img/hero-img.png" alt="demo"></div>
+          <div class="st-hero-img"><img src="https://www.eqrae.com/wp-content/uploads/2022/05/1-19.png" alt="demo"></div>
         </div>
      
       </div>
@@ -329,6 +329,33 @@ body.bodyChecked img.stars {
 
       <!-- End About Section -->
   
+      @foreach ($categories as $category)
+
+      <section class="center padding">
+      <div class="margin-bottom max-width-m">
+        <h3>{{ $category->title }}</h3>
+        <p class="lead">Build awesome websites or landing pages with simple and independent parts.</p>
+      </div>
+        
+      <div class="max-width-l">
+
+        <div class="row margin-bottom min-two-columns">
+        @foreach ($category->products as $pr)
+
+          <div class="col-one-fourth">
+
+            <i class="feature-icons material-icons bg-gradient-pink dark">format_shapes</i>
+            <h6>Minimal Design</h6>
+          </div>
+ 
+          @endforeach
+
+      </div>
+    </section>
+    @endforeach
+
+
+
       <!-- Start Service Section -->
       @foreach ($categories as $category)
 
