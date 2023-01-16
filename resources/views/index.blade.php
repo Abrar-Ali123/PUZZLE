@@ -378,7 +378,7 @@ body.bodyChecked img.stars {
             <div class="st-service-carousel owl-carousel st-style2 st-owl-controler3">
               @foreach ($category->products as $pr)
 
-              <div class="st-image-box st-style1 text-center wow fadeIn" data-wow-duration="0.8s" data-wow-delay="0.2s">
+              <div class="st-image-box st-style1 text-center wow fadeIn" data-wow-duration="0.1s" data-wow-delay="0.1s">
                 <a href="#" class="st-image"><img src="{{asset($pr->image)}}" alt="{{$pr->title}}"></a>
                 <div class="st-image-box-info">
                   <h3 class="st-image-box-title"><a href="#">{{$pr->title}}</a></h3>
