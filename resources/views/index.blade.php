@@ -329,9 +329,10 @@ body.bodyChecked img.stars {
 
       <!-- End About Section -->
   
-      @foreach ($categories as $category)
 
       <section class="center padding">
+      @foreach ($categories as $category)
+
       <div class="margin-bottom max-width-m">
         <h3>{{ $category->title }}</h3>
         <p class="lead">Build awesome websites or landing pages with simple and independent parts.</p>
@@ -351,8 +352,9 @@ body.bodyChecked img.stars {
           @endforeach
 
       </div>
+      @endforeach
+
     </section>
-    @endforeach
 
 
 
