@@ -124,6 +124,7 @@ img.stars {
 body.bodyChecked img.stars {
     opacity: 0;
 }
+ 
 </style>
 
 
@@ -290,6 +291,35 @@ body.bodyChecked img.stars {
           </div>
         </div>
       </section>
+
+      <div class="container px-5 py-5">
+      @foreach ($categories as $category)
+      <br>
+    <center>    {{ $category->title }}</center> 
+        <br> <br>
+         
+        <div class="row">
+      
+        @foreach ($category->products as $pr)
+        <br>
+            <div class="col mx-1">
+            <a href="#" class="st-image"><img src="{{asset($pr->image)}}" alt="{{$pr->title}}"></a>
+ 
+            <center> {{$pr->title}}</center>
+
+            </div>
+           
+            <br> <br>
+            <br> <br>
+            <br> <br>
+            <br>
+            @endforeach
+            <br>
+        </div>
+        @endforeach
+        <br>
+    </div>
+
       <!-- End Icon Box -->
   
       <!-- Start About Section 
@@ -330,35 +360,11 @@ body.bodyChecked img.stars {
       <!-- End About Section -->
   
 
-      <section class="center padding">
-      @foreach ($categories as $category)
-
-      <div class="margin-bottom max-width-m">
-        <h3>{{ $category->title }}</h3>
-        <p class="lead">Build awesome websites or landing pages with simple and independent parts.</p>
-      </div>
-        
-      <div class="max-width-l">
-
-        <div class="row margin-bottom min-two-columns">
-        @foreach ($category->products as $pr)
-
-          <div class="col-one-fourth">
-
-            <i class="feature-icons material-icons bg-gradient-pink dark">format_shapes</i>
-            <h6>Minimal Design</h6>
-          </div>
  
-          @endforeach
-
-      </div>
-      @endforeach
-
-    </section>
 
 
 
-      <!-- Start Service Section -->
+      <!-- Start Service Section 
       @foreach ($categories as $category)
 
       <section class="st-service-section st-section-top" id="service">
@@ -394,7 +400,7 @@ body.bodyChecked img.stars {
 
       @endforeach
 
-      <!-- End Service Section -->
+       End Service Section -->
   
   
       <!-- Start CTA Section -->
