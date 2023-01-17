@@ -168,8 +168,7 @@ body.bodyChecked img.stars {
           <div class="st-main-header-in">
             <div class="st-site-branding">
               
-  <a href="#" class="st-logo-link"><img src="{{ asset($setting->logo) }}" alt="logo"  style="width:60px;height:60px;"></a>
-            </div>
+             </div>
             <!-- For Site Title -->
             <!-- <span class="st-site-title">
               <a href="index.html">Logo</a>
@@ -239,10 +238,10 @@ body.bodyChecked img.stars {
                  <br />
                </div>             
               <div class="st-btn-group st-style1">
-                <a href="#" class="st-btn st-style1 st-color1">
+                <a href="#" class="btn">
                 {{ __('index.Get to know us more') }}
                 </a>
-                <a href="#" class="st-btn st-style2 st-video-open"><i class="flaticon-multimedia"></i></a>
+                <a href="#" class="btn"><i class="flaticon-multimedia"></i></a>
               </div>
             </div>
             </div>
@@ -254,6 +253,7 @@ body.bodyChecked img.stars {
       <!-- Start Icon Box -->
       <section class="st-section-top" id="service">
         <div class="container">
+          <center>
           <div class="row">
             <div class="col-lg-4">
               <div class="st-iconbox st-style1 text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
@@ -288,7 +288,10 @@ body.bodyChecked img.stars {
                 </div>
               </div>
             </div>
+         
           </div>
+</center>
+
         </div>
       </section>
 
@@ -297,9 +300,9 @@ body.bodyChecked img.stars {
       <br>
     <center>    {{ $category->title }}</center> 
         <br> <br>
-         
+
+        <center> 
         <div class="row">
-      
         @foreach ($category->products as $pr)
         <br>
             <div class="col mx-1">
@@ -319,6 +322,8 @@ body.bodyChecked img.stars {
         @endforeach
         <br>
     </div>
+</center> 
+
 
       <!-- End Icon Box -->
   
@@ -360,7 +365,7 @@ body.bodyChecked img.stars {
       <!-- End About Section -->
   
 
- 
+
 
 
 
@@ -402,32 +407,29 @@ body.bodyChecked img.stars {
 
        End Service Section -->
   
+       <div class='container'>
+  <a href='#' class='cta'>
+    <i data-feather="check" class='icon'></i>
+  </a>
+</div>
+<center>
+
+<!-- References Dribbble / Twitter -->
+  <div class ="frame">
+
+
+
   
-      <!-- Start CTA Section -->
-      <section class="st-cta-wrap st-gray-bg mt-3">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7 offset-lg-1">
-              <div class="st-cta text-center st-section">
-                <h2 class="st-cta-title">@lang('index.lookingFor')</h2>
-                <div class="st-cta-text">@lang('index.lookingFor.text')</div>
-                <div class="st-cta-btn">
-                  <a href="mailto:test@test.com" class="st-btn st-style1 st-size1 st-color1">@lang('index.lookingFor.button')</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="st-vertical-middle">
-                <div class="st-vertical-middle-in st-flex">
-                  <div class="st-cta-img wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
-                    <img src="https://limty-html.netlify.app/limty/assets/img/light-img/cta-img.png" alt="demo">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <i style="color: #3b5998;">
+     <a href="mailto:test@test.com" class="btn">@lang('index.lookingFor.button')</a>
+ </i>
+</a>
+  
+</a>
+</div>
+</center>
+       <!-- Start CTA Section -->
+      
       <!-- End CTA Section -->
         
        <!-- Start Pricing Plan -->
@@ -444,6 +446,7 @@ body.bodyChecked img.stars {
         </div>
       </div>
       <div class="container">
+      <center> 
         <div class="row">
           @foreach($packages as $pack)
           <div class="col-lg-4">
@@ -463,14 +466,15 @@ body.bodyChecked img.stars {
                 <li>{{$pr->title}}</li>
                 @endforeach
               </ul>
-              {{-- <div class="st-price-card-btn">
-                <a href="#" class="st-btn st-style1 st-size1 st-color1">Start The Plan</a>
+              {{-- <div class="btn">
+                <a href="#" class="btn">Start The Plan</a>
               </div> --}}
             </div>
           </div>
           @endforeach
       
         </div>
+              </center> 
       </div>
     </section>
     <!-- End Pricing Plan -->
@@ -491,6 +495,7 @@ body.bodyChecked img.stars {
           </div>
         </div>
         <div class="container">
+     <center>     
           <div class="row">
             <div class="col-lg-6">
               @if(Session::has('errors'))
@@ -509,7 +514,7 @@ body.bodyChecked img.stars {
                 <input type="text" placeholder="@lang('index.form.email')" id="email" name="email" required>
                 <input type="text" placeholder="@lang('index.form.subject')" id="subject" name="subject" required>
                 <textarea cols="30" rows="10" placeholder="@lang('index.form.msg')" id="msg" name="msg" required></textarea>
-                <button class="st-btn st-style1 st-size1 st-color1" type="submit" id="submit" name="submit">@lang('index.form.button')</button>
+                <button class="btn" type="submit" id="submit" name="submit">@lang('index.form.button')</button>
               </form>
             </div>
             <div class="col-lg-6">
@@ -548,6 +553,8 @@ body.bodyChecked img.stars {
               </div>
             </div>
           </div>
+              </center>     
+
         </div>
       </section>
       <!-- End Contact Section -->
@@ -636,6 +643,13 @@ $("#check").change(function(){
         $(".cloud").css("opacity","0");
     }
 });
+
+
+feather.replace();
+
+// SVGs
+$('#svgDribbble').load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/references.html #dribbble');
+$('#svgTwitter').load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/references.html #twitter');
 
 });
 </script>

@@ -1,3 +1,58 @@
+
+  .frame{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height:max-content;
+    width:max-content;
+    position: relative;
+
+     box-shadow:
+     -7px -7px 20px 0px #fff,
+     -4px -4px 5px 0px #fff,
+     7px 7px 20px 0px #0002,
+     4px 4px 5px 0px #0001,
+     inset 0px 0px 0px 0px #fff,
+     inset 0px 0px 0px 0px #0001,
+     inset 0px 0px 0px 0px #fff,        inset 0px 0px 0px 0px #0001;
+   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+     border-radius: 10px;
+  }
+  
+  .btn{
+    
+    border-radius: 3px;
+    background: #e0e5ec;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+     -7px -7px 20px 0px #fff9,
+     -4px -4px 5px 0px #fff9,
+     7px 7px 20px 0px #0002,
+     4px 4px 5px 0px #0001,
+     inset 0px 0px 0px 0px #fff9,
+     inset 0px 0px 0px 0px #0001,
+     inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
+   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+    font-size: 16px;
+    color: rgba(42, 52, 84, 1);
+    text-decoration: none;
+  }
+  .btn:active{
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.5),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  }
+
 /**
  Theme Name: limty
  Author: laralink
@@ -55,6 +110,8 @@ html {
     font-weight: 300;
     line-height: 1.6em;
     overflow-x: hidden;
+ 
+ 
 }
 
 h1,
@@ -200,7 +257,29 @@ a:hover {
 }
 
 .row {
+     
+    justify-content: center;
+    align-items: center;
+    width:98%;
+    margin-top: 60px;
+    margin-left: 40px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
     margin-top: -30px;
+    box-shadow:
+    -7px -7px 20px 0px #fff,
+    -4px -4px 5px 0px #fff,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001,
+    inset 0px 0px 0px 0px #fff,
+    inset 0px 0px 0px 0px #0001,
+    inset 0px 0px 0px 0px #fff,        inset 0px 0px 0px 0px #0001;
+  transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+    border-radius: 10px;
 }
 
 .row>[class*="col-"] {
@@ -293,8 +372,22 @@ a:hover {
 .owl-carousel.st-owl-controler1 .owl-dots button.active,
 .owl-carousel.st-owl-controler3 .owl-dots button.active,
 .owl-carousel.st-client-carousel .owl-dots button.active {
-    background-color: #6262a0;
-}
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-top: -30px;
+    box-shadow:
+    -7px -7px 20px 0px #fff,
+    -4px -4px 5px 0px #fff,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001,
+    inset 0px 0px 0px 0px #fff,
+    inset 0px 0px 0px 0px #0001,
+    inset 0px 0px 0px 0px #fff,        inset 0px 0px 0px 0px #0001;
+  transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+    border-radius: 10px;
+ }
 
 /*Style 2*/
 .owl-carousel.st-owl-controler2 .owl-nav {
@@ -442,6 +535,8 @@ a:hover {
     margin-left: -10px;
     margin-right: -10px;
     margin-bottom: -10px;
+
+    
 }
 
 .st-btn-group.st-style1 .st-btn {
@@ -860,8 +955,9 @@ a:hover {
 }
 
 .st-full-width .container {
-    max-width: 100%;
+    max-width:fit-content;
     padding: 0 50px;
+    
 }
 
 /*End Horizontal Mega menu*/
@@ -1133,7 +1229,7 @@ a:hover {
     }
 
     .st-header .container {
-        max-width: 100%;
+        max-width:fit-content;
     }
 
     .st-mobile-nav {
@@ -1165,8 +1261,7 @@ a:hover {
 
 .st-hero-slide.st-style1 .container,
 .st-hero-slide.st-style2 .container {
-    margin: 0;
-    position: relative;
+     position: relative;
     z-index: 2;
 }
 
