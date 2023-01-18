@@ -161,14 +161,23 @@ body.bodyChecked img.stars {
       <div class="st-preloader-wave"></div>
       <div class="st-preloader-wave"></div>
       <div class="st-preloader-wave"></div>
+
     </div>
     <header class="st-header st-style1 st-sticky-menu st-full-width">
       <div class="st-main-header">
         <div class="container">
           <div class="st-main-header-in">
+          &nbsp;&nbsp;&nbsp;&nbsp;
             <div class="st-site-branding">
-              
+            &nbsp;&nbsp;&nbsp;&nbsp;
+             
+
+
+            <left>
+            <a href="#" class="st-logo-link"><img src="{{ asset($setting->logo) }}" ALIGN="LEFT" alt="logo"  style="width:60px;height:60px;"></a>
+ </left>
              </div>
+             
             <!-- For Site Title -->
             <!-- <span class="st-site-title">
               <a href="index.html">Logo</a>
