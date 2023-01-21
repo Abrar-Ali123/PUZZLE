@@ -56,7 +56,8 @@ return [
     'the missing part!' => 'the missing part!',
     'Watch Video' => 'Watch Video',
     'Clients' => 'Our Clients',
-    'Clients.des' => 'Because we are keen on quality services and customer satisfaction, we feel proud',
+    'Clients.des' => '
+    Because we, in puzzle are always keen on quality services and customer satisfaction first, we feel proud because we were able to obtain the satisfaction of our customers by turning their ideas into reality.',
 
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
