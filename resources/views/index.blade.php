@@ -165,19 +165,17 @@ body.bodyChecked img.stars {
     </div>
     <header class="st-header st-style1 st-sticky-menu st-full-width">
       <div class="st-main-header">
-        <div class="container">
-          <div class="st-main-header-in">
-          &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="container-fluid">
+          <div class="st-main-header-in" style="display:flex;align-items:center;justify-content:space-between;">
+            <div class="st-main-header-left">
+  
             <div class="st-site-branding">
-            &nbsp;&nbsp;&nbsp;&nbsp;
-             
+              <a href="#" class="st-logo-link"><img src="{{ asset($setting->logo) }}" alt="logo"  style="width:60px;height:60px;"></a>
 
 
-            <left>
-            <a href="#" class="st-logo-link"><img src="{{ asset($setting->logo) }}" ALIGN="LEFT" alt="logo"  style="width:60px;height:60px;"></a>
- </left>
-             </div>
-             
+          </div>
+        </div>
+
             <!-- For Site Title -->
             <!-- <span class="st-site-title">
               <a href="index.html">Logo</a>
@@ -213,19 +211,18 @@ body.bodyChecked img.stars {
                   <li><a href="#service" class="smooth-scroll">{{ __('index.Service') }}</a></li>
                   <li><a href="#portfolio" class="smooth-scroll">{{ __('index.Portfolio') }}</a></li>
                   <li><a href="#contact" class="smooth-scroll">{{ __('index.contact') }}</a></li>
-                  <li>
-                  <label class="slider">
-                    <input type="checkbox" id="check">
-                    <span class="circle"></span>
-                </label>
-                </li>
                 
-                  </li>
                  </ul>
          
 
                 </nav><!-- .st-nav -->
               </div><!-- .st-nav-wrap -->
+              <label class="slider d-flex justify-content-right">
+                <input type="checkbox" id="check">
+                <span class="circle"></span>
+            </label>
+
+
           </div>
         </div>
       </div>
@@ -247,10 +244,10 @@ body.bodyChecked img.stars {
                  <br />
                </div>             
               <div class="st-btn-group st-style1">
-                <a href="#" class="btn">
+                <a href="#" class="btn btn-lg mr-2">
                 {{ __('index.Get to know us more') }}
                 </a>
-                <a href="#" class="btn"><i class="flaticon-multimedia"></i></a>
+                <a href="#" class="btn btn-lg"><i class="flaticon-multimedia"></i></a>
               </div>
             </div>
             </div>
@@ -487,7 +484,78 @@ body.bodyChecked img.stars {
       </div>
     </section>
     <!-- End Pricing Plan -->
+    <section class="st-team-wrap st-section" id="team">
+      <div class="container">
+        <div class="st-section-heading st-style2 text-center">
+          <h2>@lang('index.Clients')</h2>
+          <div class="st-seperator">
+            <div class="st-seperator-left-bar wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInLeft;"></div>
+            <img src="img/dark-img/seperator-icon.png" alt="demo" class="st-seperator-icon">
+            <div class="st-seperator-right-bar wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInRight;"></div>
+          </div>
+          <p>
+            @lang('index.Clients.des')
+          </p>
+        </div>
+      <div class="st-owl-controler3-hover">
+        <div class="container">
+          <div class="st-member-carousel owl-carousel st-style2 st-owl-controler3 owl-loaded owl-drag">
+            
+            <div class="owl-stage-outer">
+              <div class="owl-stage" style="transform: translate3d(-960px, 0px, 0px); transition: all 0s ease 0s; width: 3200px;">
+              <div class="owl-item cloned" style="width: 290px; margin-right: 30px;">
+                <div class="st-team-member text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.25s" style="visibility: visible; animation-duration: 0.8s; animation-delay: 0.25s; animation-name: fadeInUp;">
+                <div class="st-member-img">
+                  <img class="img-fluid" src="{{asset('images/clients/ikmal.jpg')}}" alt="ikmal">
+                </div>
+                <div class="st-member-info">
+                  <ul class="st-member-social-btn st-flex st-mp0">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div></div>
+              
+              <div class="owl-item cloned" style="width: 290px; margin-right: 30px;"><div class="st-team-member text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 0.8s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                <div class="st-member-img">
+                  <img class="img-fluid" src="{{asset('images/clients/RUSHM.jpeg')}}" alt="RUSHM">
+                </div>
+                <div class="st-member-info">
+                  <ul class="st-member-social-btn st-flex st-mp0">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div></div>
+              <div class="owl-item cloned" style="width: 290px; margin-right: 30px;"><div class="st-team-member text-center wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.35s" style="visibility: visible; animation-duration: 0.8s; animation-delay: 0.35s; animation-name: fadeInUp;">
+                <div class="st-member-img">
+                  <img class="img-fluid" src="{{asset('images/clients/Al-Rawabi.jpg')}}" alt="Rawabi">
+                </div>
+                <div class="st-member-info">
+                  <ul class="st-member-social-btn st-flex st-mp0">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  </ul>
+                </div>
+              </div></div>
+</div></div>
       
+          
+
+         
+
+         
+          <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="flaticon-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="flaticon-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button></div>
+        </div>
+        </div>
+      </div>
+    </section>
       <!-- Start Contact Section -->
       <section class="st-contact-wrap st-gray-bg st-section" id="contact">
         <div class="container">

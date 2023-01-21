@@ -55,6 +55,9 @@ return [
     'Puzzle complete' => 'Puzzle complete',
     'the missing part!' => 'the missing part!',
     'Watch Video' => 'Watch Video',
+    'Clients' => 'Our Clients',
+    'Clients.des' => 'Because we are keen on quality services and customer satisfaction, we feel proud',
+
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',

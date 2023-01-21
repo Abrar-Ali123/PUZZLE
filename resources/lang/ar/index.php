@@ -57,6 +57,9 @@ return [
     'the missing part!' => 'الجـــزءالنـــاقص',
     'Watch Video' => 'شاهد الفيديو',
     
+    'Clients' => 'عملائنا',
+    'Clients.des' => 'لأننا في شركة تقنية حريصين دائماً على جودة الخدمات ورضا العميل اولأ فاننا نشعر بالفخر لأننا استطعنا ان ننال رضا عملائنا بتحويل أفكارهم الى حقيقة',
+
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
