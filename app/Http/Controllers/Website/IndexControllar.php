@@ -36,7 +36,9 @@ class IndexControllar extends Controller
 
 
     public function contact(ContactRequest $request){
-
+        if(!empty($request->ckb)){
+            dd("DIE BOT !");
+        }
         $json = file_get_contents('http://ip-api.com/json/'.$_SERVER['REMOTE_ADDR'].'?fields=status,message,continent,country,countryCode,region,regionName,city,zip,timezone,currency,proxy,query');
 $info = json_decode($json, true);
 if($info['status'] == 'success'){

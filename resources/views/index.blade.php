@@ -587,6 +587,9 @@ body.bodyChecked img.stars {
               @endif
               <form action="{{route('index.contact')}}" method="post" class="st-contact-form">
                 @csrf
+
+                <input class="d-none" type="text" name="ckb">
+
                 <input type="text" placeholder="@lang('index.form.name')" id="name" name="name" required>
                 <input type="text" placeholder="@lang('index.form.email')" id="email" name="email" required>
                 <input type="text" placeholder="@lang('index.form.subject')" id="subject" name="subject" required>
