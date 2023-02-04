@@ -11,6 +11,7 @@ Auth::routes();
 
 Route::get('/', [IndexControllar::class, 'index'])->name('index');
 Route::post('/', [IndexControllar::class, 'contact'])->name('index.contact');
+Route::get('gallary', [IndexControllar::class, 'gallary'])->name('index.gallary');
 
 // Route::get('/categories/{category}', [CategoryControllar::class, 'show'])->name('category');
 // Route::get('/product/{product}', [productControllar::class, 'show'])->name('product');

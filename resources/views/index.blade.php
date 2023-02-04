@@ -211,7 +211,10 @@ body.bodyChecked img.stars {
                   <li><a href="#service" class="smooth-scroll">{{ __('index.Service') }}</a></li>
                   <li><a href="#portfolio" class="smooth-scroll">{{ __('index.Portfolio') }}</a></li>
                   <li><a href="#contact" class="smooth-scroll">{{ __('index.contact') }}</a></li>
-                
+                  <li><a href="{{route('index.gallary')}}" class="smooth-scroll">{{ __('index.gallary') }}</a></li>
+
+
+                  
                  </ul>
          
 
@@ -600,12 +603,12 @@ body.bodyChecked img.stars {
             <div class="col-lg-6">
               <div class="st-contact-info st-style1">
                 <div class="st-contact-info-in">
-                  <h3 class="st-contact-info-title">@lang('index.contact.info')</h3>
+                  <h3 class="st-contact-info-title text-muted">@lang('index.contact.info')</h3>
                   <ul>
-                    <li><i class="fas fa-map-signs"></i>location</li>
-                    <li><i class="fas fa-phone"></i>+966</li>
-                    <li><i class="fas fa-envelope"></i><a href="mailto:Puzzle@puzzle-sa.com">Puzzle@puzzle-sa.com</a></li>
-                    <li><i class="fas fa-globe"></i><a href="http://puzzle-sa.com">puzzle-sa.com</a></li>
+                    <li class="text-muted"><i class="fas fa-map-signs"></i>location</li>
+                    <li class="text-muted"><i class="fas fa-phone"></i>+966</li>
+                    <li class="text-muted"><i class="fas fa-envelope"></i><a href="mailto:Puzzle@puzzle-sa.com">Puzzle@puzzle-sa.com</a></li>
+                    <li class="text-muted"><i class="fas fa-globe"></i><a href="http://puzzle-sa.com">puzzle-sa.com</a></li>
                   </ul>
                 </div>
                 <div class="st-svg-animation1">

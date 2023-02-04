@@ -34,6 +34,13 @@ class IndexControllar extends Controller
 
     }
 
+    public function gallary()
+    {
+        $setting = Setting::checkSettings();
+
+        return view('gallary', compact('setting'));
+
+    }
 
     public function contact(ContactRequest $request){
         if(!empty($request->ckb)){
