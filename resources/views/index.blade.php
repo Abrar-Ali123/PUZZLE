@@ -590,7 +590,7 @@ body.bodyChecked img.stars {
               @endif
               <form action="{{route('index.contact')}}" method="post" class="st-contact-form">
                 @csrf
-                {!! GoogleReCaptchaV3::renderOne('Stest', 'contact') !!}
+                {!! GoogleReCaptchaV3::renderOne('Stest', 'captcha') !!}
 
                 <input class="d-none" type="text" name="ckb">
 
@@ -738,6 +738,9 @@ $('#svgDribbble').load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/refe
 $('#svgTwitter').load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/references.html #twitter');
 
 });
+
+{!! GoogleReCaptchaV3::init() !!}
+
 </script>
 </body>
 </html>

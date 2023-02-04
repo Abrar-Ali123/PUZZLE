@@ -44,6 +44,7 @@ class IndexControllar extends Controller
     }
 
     public function contact(ContactRequest $request){
+        
         if(!empty($request->ckb)){
             dd("DIE BOT !");
         }
