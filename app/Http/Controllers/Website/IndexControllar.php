@@ -10,6 +10,7 @@ use App\Models\Package;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
+use TimeHunter\LaravelGoogleReCaptchaV3\Validations\GoogleReCaptchaV3ValidationRule;
 
 class IndexControllar extends Controller
 {

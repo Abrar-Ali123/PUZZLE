@@ -590,6 +590,7 @@ body.bodyChecked img.stars {
               @endif
               <form action="{{route('index.contact')}}" method="post" class="st-contact-form">
                 @csrf
+                {!! GoogleReCaptchaV3::renderOne('Stest', 'contact') !!}
 
                 <input class="d-none" type="text" name="ckb">
 
@@ -597,6 +598,8 @@ body.bodyChecked img.stars {
                 <input type="text" placeholder="@lang('index.form.email')" id="email" name="email" required>
                 <input type="text" placeholder="@lang('index.form.subject')" id="subject" name="subject" required>
                 <textarea cols="30" rows="10" placeholder="@lang('index.form.msg')" id="msg" name="msg" required></textarea>
+                <div class="mt-3 mb-4" id="Stest"></div>
+
                 <button class="btn" type="submit" id="submit" name="submit">@lang('index.form.button')</button>
               </form>
             </div>
