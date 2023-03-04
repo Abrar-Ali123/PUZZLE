@@ -742,8 +742,10 @@ $('#svgTwitter').load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/373860/refer
 
 });
 
-{!! GoogleReCaptchaV3::init() !!}
 
 </script>
+
+{!! GoogleReCaptchaV3::init() !!}
+
 </body>
 </html>

@@ -109,8 +109,8 @@ return [
     */
     'setting' => [
         [
-            'action' => 'contact_us',
-            'threshold' => 0,
+            'action' => 'captcha',
+            'threshold' => 0.5,
             'score_comparison' => false,
         ],
     ],
