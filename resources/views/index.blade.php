@@ -612,8 +612,7 @@ body.bodyChecked img.stars {
                 <div class="st-contact-info-in">
                   <h3 class="st-contact-info-title text-muted">@lang('index.contact.info')</h3>
                   <ul>
-                    <li class="text-muted"><i class="fas fa-map-signs"></i>location</li>
-                    <li class="text-muted"><i class="fas fa-phone"></i>+966</li>
+                    <li class="text-muted"><i class="fas fa-phone"></i>+966550880798</li>
                     <li class="text-muted"><i class="fas fa-envelope"></i><a href="mailto:Puzzle@puzzle-sa.com">Puzzle@puzzle-sa.com</a></li>
                     <li class="text-muted"><i class="fas fa-globe"></i><a href="http://puzzle-sa.com">puzzle-sa.com</a></li>
                   </ul>
