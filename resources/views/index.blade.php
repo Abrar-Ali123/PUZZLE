@@ -232,6 +232,7 @@ body.bodyChecked img.stars {
                   <li><a href="#portfolio" class="smooth-scroll">{{ __('index.Portfolio') }}</a></li>
                   <li><a href="#contact" class="smooth-scroll">{{ __('index.contact') }}</a></li>
                   <li><a href="{{route('index.gallary')}}" class="smooth-scroll">{{ __('index.gallary') }}</a></li>
+                  <li><a href="{{route('index.realEstate')}}" class="smooth-scroll">{{ __('index.realEstate') }}</a></li>
 
 
                   

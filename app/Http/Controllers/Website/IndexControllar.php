@@ -43,6 +43,12 @@ class IndexControllar extends Controller
 
     }
 
+    public function realEstate(){
+        $setting = Setting::checkSettings();
+
+        return view('realEstate', compact('setting'));
+    }
+
     public function contact(ContactRequest $request){
         
         if(!empty($request->ckb)){

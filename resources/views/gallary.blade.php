@@ -198,7 +198,8 @@ span.circle::before {
 
                   
         <li><a href="{{route('index')}}" class="slider">{{ __('index.Home') }}</a></li>
-                
+        <li><a href="{{route('index.realEstate')}}" class="smooth-scroll">{{ __('index.realEstate') }}</a></li>
+
                  </ul>
          
 
