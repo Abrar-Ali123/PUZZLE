@@ -33,5 +33,21 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  
 
 
+Route::get('test/index', function(){
+    return view('test/index');
+});
+
+Route::get('test/gallary', function(){
+    return view('test/gallary');
+});
+
+Route::get('test/realEstate', function(){
+    return view('test/realEstate');
+});
+
+Route::get('test/contact', function(){
+    return view('test/contact');
+});
+
 
 
